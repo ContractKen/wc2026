@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
-import type { Match, Team } from '../lib/types'
+import type { FollowedPlayer, Match, Team } from '../lib/types'
 import type { LiveMap } from '../lib/espn'
-import { MatchCard } from './MatchCard'
+import { MatchCard, type MatchCardCommon } from './MatchCard'
 import { CountryPicker } from './CountryPicker'
+import { SquadPicker } from './SquadPicker'
 import { involves } from '../lib/match'
 import { zoned } from '../lib/time'
 import { downloadICS, matchesToICS } from '../lib/ics'
@@ -25,23 +26,31 @@ interface Props {
   live: LiveMap
   zone: string
   favorites: Set<string>
-  isFav: (code: string) => boolean
-  toggleFav: (code: string) => void
   setMany: (codes: string[], selected: boolean) => void
+  players: FollowedPlayer[]
+  card: MatchCardCommon
 }
 
-export function FavoritesView({ matches, live, zone, favorites, isFav, toggleFav, setMany }: Props) {
+export function FavoritesView({ matches, live, zone, favorites, setMany, players, card }: Props) {
+  const { isFav, toggleFav, isFollowed, toggleFollow } = card
   const [pickerOpen, setPickerOpen] = useState(favorites.size === 0)
-  const [alarms, setAlarms] = useState<number[]>([1440, 60]) // 1 day + 1 hour by default
+  const [alarms, setAlarms] = useState<number[]>([1440, 60])
 
   const favTeams = useMemo(() => sortByRank(TEAMS.filter((t) => favorites.has(t.code))), [favorites])
+
+  // Relevant teams = followed countries + the countries of followed players.
+  const relevantCodes = useMemo(() => {
+    const s = new Set(favorites)
+    for (const p of players) s.add(p.teamCode)
+    return s
+  }, [favorites, players])
 
   const myMatches = useMemo(
     () =>
       matches
-        .filter((m) => [...favorites].some((code) => involves(m, code, live)))
+        .filter((m) => [...relevantCodes].some((code) => involves(m, code, live)))
         .sort((a, b) => a.utc.localeCompare(b.utc)),
-    [matches, favorites, live],
+    [matches, relevantCodes, live],
   )
 
   const days = useMemo(() => {
@@ -58,29 +67,19 @@ export function FavoritesView({ matches, live, zone, favorites, isFav, toggleFav
   function toggleAlarm(min: number) {
     setAlarms((prev) => (prev.includes(min) ? prev.filter((m) => m !== min) : [...prev, min]))
   }
-
   function exportFavorites() {
-    downloadICS(
-      'wc2026-my-matches.ics',
-      matchesToICS(myMatches, live, { label: 'WC 2026 — My Countries', alarms }),
-    )
+    downloadICS('wc2026-my-matches.ics', matchesToICS(myMatches, live, { label: 'WC 2026 — My Teams', alarms }))
   }
   function exportAll() {
-    downloadICS(
-      'wc2026-all-matches.ics',
-      matchesToICS(matches, live, { label: 'FIFA World Cup 2026', alarms }),
-    )
+    downloadICS('wc2026-all-matches.ics', matchesToICS(matches, live, { label: 'FIFA World Cup 2026', alarms }))
   }
 
   return (
     <div className="favorites">
-      {/* Selected countries + picker toggle */}
       <div className="fav-toolbar">
         <div className="fav-teams">
           {favTeams.length === 0 ? (
-            <span className="muted">
-              Pick the countries you want to follow — their matches and reminders go here.
-            </span>
+            <span className="muted">Pick the countries you want to follow — their matches and reminders go here.</span>
           ) : (
             favTeams.map((t) => (
               <button key={t.code} className="fav-chip" onClick={() => toggleFav(t.code)} title="Remove">
@@ -90,7 +89,7 @@ export function FavoritesView({ matches, live, zone, favorites, isFav, toggleFav
           )}
         </div>
         <button className="btn btn--ghost" onClick={() => setPickerOpen((v) => !v)}>
-          {pickerOpen ? 'Done choosing' : `＋ Choose countries`}
+          {pickerOpen ? 'Done choosing' : '＋ Choose countries'}
         </button>
       </div>
 
@@ -98,7 +97,19 @@ export function FavoritesView({ matches, live, zone, favorites, isFav, toggleFav
         <CountryPicker teams={TEAMS} isSelected={isFav} onToggle={toggleFav} onSelectMany={setMany} />
       )}
 
-      {/* Reminders + calendar export */}
+      {/* Players */}
+      {players.length > 0 && (
+        <div className="fav-players">
+          {players.map((p) => (
+            <button key={p.id} className="fav-chip fav-chip--player" onClick={() => toggleFollow(p)} title="Unfollow">
+              ⚽ {p.name} <small>{p.teamCode}</small> ✕
+            </button>
+          ))}
+        </div>
+      )}
+      <SquadPicker teams={TEAMS} isFollowed={isFollowed} toggleFollow={toggleFollow} />
+
+      {/* Reminders + export */}
       <div className="reminders">
         <div className="reminders__row">
           <span className="reminders__label">⏰ Remind me</span>
@@ -111,21 +122,20 @@ export function FavoritesView({ matches, live, zone, favorites, isFav, toggleFav
         </div>
         <div className="reminders__actions">
           <button className="btn" disabled={myMatches.length === 0} onClick={exportFavorites}>
-            📅 Add my countries’ matches ({myMatches.length})
+            📅 Add my teams’ matches ({myMatches.length})
           </button>
           <button className="btn btn--ghost" onClick={exportAll}>
             📅 Add all 104 matches
           </button>
         </div>
         <p className="reminders__hint">
-          Downloads an <code>.ics</code> file with {alarms.length || 'no'} reminder
-          {alarms.length === 1 ? '' : 's'} per match. Open it to import into Google, Apple, or Outlook
-          Calendar — reminders come along automatically.
+          Downloads an <code>.ics</code> with {alarms.length || 'no'} reminder{alarms.length === 1 ? '' : 's'} per match —
+          import into Google, Apple, or Outlook Calendar.
         </p>
       </div>
 
-      {favTeams.length > 0 && days.length === 0 && (
-        <p className="empty">No upcoming matches found for your countries.</p>
+      {relevantCodes.size > 0 && days.length === 0 && (
+        <p className="empty">No upcoming matches found for your teams.</p>
       )}
 
       {days.map(([key, { heading, items }]) => (
@@ -133,14 +143,7 @@ export function FavoritesView({ matches, live, zone, favorites, isFav, toggleFav
           <h2 className="day__heading">{heading}</h2>
           <div className="day__matches">
             {items.map((m) => (
-              <MatchCard
-                key={m.id}
-                match={m}
-                live={live[m.id]}
-                zone={zone}
-                isFav={isFav}
-                toggleFav={toggleFav}
-              />
+              <MatchCard key={m.id} match={m} live={live[m.id]} zone={zone} {...card} />
             ))}
           </div>
         </section>

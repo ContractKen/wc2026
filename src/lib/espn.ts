@@ -1,4 +1,14 @@
-import type { CommentaryItem, LiveState, MatchEvent, MatchSummary, TeamRef } from './types'
+import type {
+  CommentaryItem,
+  H2HGame,
+  Lineup,
+  LiveState,
+  MatchEvent,
+  MatchSummary,
+  SquadPlayer,
+  TeamRef,
+  TeamStats,
+} from './types'
 
 // In dev we hit the Vite proxy (/espn -> site.api.espn.com) to dodge CORS.
 // A production build calls ESPN directly (it returns permissive CORS headers).
@@ -127,10 +137,83 @@ function classify(typeText: string, rawType: string, scoring: boolean): MatchEve
   return 'other'
 }
 
+interface RawSummary {
+  keyEvents?: RawKeyEvent[]
+  commentary?: RawCommentary[]
+  boxscore?: {
+    teams?: Array<{
+      homeAway?: 'home' | 'away'
+      team?: { displayName?: string }
+      statistics?: Array<{ name?: string; label?: string; displayValue?: string }>
+    }>
+  }
+  rosters?: Array<{
+    homeAway?: 'home' | 'away'
+    formation?: string
+    team?: { displayName?: string }
+    roster?: Array<{
+      starter?: boolean
+      jersey?: string
+      subbedIn?: boolean
+      subbedOut?: boolean
+      athlete?: { id?: string; displayName?: string }
+      position?: { abbreviation?: string }
+    }>
+  }>
+  headToHeadGames?: Array<{
+    events?: Array<{
+      gameDate?: string
+      score?: string
+      gameResult?: string
+      competitionName?: string
+      leagueName?: string
+    }>
+  }>
+}
+
+function parseLineups(data: RawSummary): Lineup[] {
+  return (data.rosters || []).map((r) => ({
+    homeAway: r.homeAway || 'home',
+    teamName: r.team?.displayName || '',
+    formation: r.formation || '',
+    players: (r.roster || []).map((p) => ({
+      id: p.athlete?.id || '',
+      name: p.athlete?.displayName || '',
+      pos: p.position?.abbreviation || '',
+      jersey: p.jersey || '',
+      starter: !!p.starter,
+      subbedIn: !!p.subbedIn,
+      subbedOut: !!p.subbedOut,
+    })),
+  }))
+}
+
+function parseStats(data: RawSummary): TeamStats[] {
+  return (data.boxscore?.teams || []).map((t) => ({
+    homeAway: t.homeAway || 'home',
+    teamName: t.team?.displayName || '',
+    stats: (t.statistics || []).map((s) => ({
+      name: s.name || '',
+      label: s.label || s.name || '',
+      value: s.displayValue || '',
+    })),
+  }))
+}
+
+function parseH2H(data: RawSummary): H2HGame[] {
+  const games = data.headToHeadGames?.[0]?.events || []
+  return games.slice(0, 6).map((g) => ({
+    date: g.gameDate || '',
+    score: g.score || '',
+    competition: g.competitionName || g.leagueName || '',
+    result: g.gameResult || '',
+  }))
+}
+
 export async function fetchSummary(eventId: string): Promise<MatchSummary> {
   const res = await fetch(`${SUMMARY}?event=${eventId}`, { headers: { accept: 'application/json' } })
   if (!res.ok) throw new Error(`ESPN summary ${res.status}`)
-  const data = (await res.json()) as { keyEvents?: RawKeyEvent[]; commentary?: RawCommentary[] }
+  const data = (await res.json()) as RawSummary
 
   const events: MatchEvent[] = (data.keyEvents || []).map((e, i) => {
     const typeText = e.type?.text || ''
@@ -152,7 +235,46 @@ export async function fetchSummary(eventId: string): Promise<MatchSummary> {
     text: c.text || '',
   }))
 
-  return { events, commentary }
+  return {
+    events,
+    commentary,
+    lineups: parseLineups(data),
+    stats: parseStats(data),
+    h2h: parseH2H(data),
+  }
+}
+
+// A team's squad (for following players). Fetched on demand.
+export async function fetchSquad(teamId: string): Promise<SquadPlayer[]> {
+  const res = await fetch(
+    `${BASE}/apis/site/v2/sports/soccer/fifa.world/teams/${teamId}/roster`,
+    { headers: { accept: 'application/json' } },
+  )
+  if (!res.ok) throw new Error(`ESPN roster ${res.status}`)
+  const data = (await res.json()) as {
+    athletes?: Array<{
+      id?: string
+      displayName?: string
+      jersey?: string
+      position?: { abbreviation?: string }
+      // some responses group by position with an items[] array
+      items?: Array<{
+        id?: string
+        displayName?: string
+        jersey?: string
+        position?: { abbreviation?: string }
+      }>
+    }>
+  }
+  const flat = (data.athletes || []).flatMap((a) => (a.items ? a.items : [a]))
+  return flat
+    .filter((p) => p.id && p.displayName)
+    .map((p) => ({
+      id: p.id!,
+      name: p.displayName!,
+      pos: p.position?.abbreviation || '',
+      jersey: p.jersey || '',
+    }))
 }
 
 // Narrow window around "now" (UTC) — cheap to poll frequently for live updates.

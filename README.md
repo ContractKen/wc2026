@@ -20,6 +20,18 @@ shown in **your** time zone with a friendly part-of-day label.
 - **Calendar export** — download your matches (or all 104) as an `.ics` file for Google/Apple Calendar.
 - **Desktop + mobile** responsive, dark football theme. Your time zone and favorites persist locally.
 
+### Also included
+- **Match detail** — tap *Details* on any live/finished match for lineups + formations, a team-stats comparison (possession, shots, corners…), and recent head-to-head history. Live matches auto-refresh every ~12s.
+- **Best third-placed teams** table (Groups tab) — the 8-of-12 qualification race that decides the 2026 Round of 32.
+- **Dynamic bracket** — R32 fixtures fill in from live standings (`*` = provisional; third-place slots show qualifying candidates).
+- **Head-to-head tiebreakers** in group tables (Pts → GD → GF → H2H).
+- **Follow players** — star players from any squad or from match lineups; their matches surface in *My Teams* and their events get highlighted.
+- **Live alerts** (foreground) — opt in (My teams / All) for goal, kickoff, and full-time browser notifications.
+- **Installable PWA + offline** — add to home screen; the shell + schedule work offline.
+- **Shareable links** — the *Share* button copies a deep link that opens that match; tabs are in the URL too.
+- **Localized "where to watch"** — pick your region (US/UK/IN/CA/AU) for the right broadcaster.
+- **Accessibility** — ARIA live region for live updates, keyboard-friendly, honors reduced-motion.
+
 ## Run it
 
 Node.js is required. If you used the project's setup it was installed via [nvm](https://github.com/nvm-sh/nvm);

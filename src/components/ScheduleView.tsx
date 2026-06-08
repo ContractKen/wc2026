@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { Match } from '../lib/types'
 import type { LiveMap } from '../lib/espn'
-import { MatchCard } from './MatchCard'
+import { MatchCard, type MatchCardCommon } from './MatchCard'
 import { effectiveTeam, isFinal, isLive, isToday } from '../lib/match'
 import { zoned } from '../lib/time'
 
@@ -10,15 +10,15 @@ interface Props {
   live: LiveMap
   zone: string
   now: Date
-  isFav: (code: string) => boolean
-  toggleFav: (code: string) => void
+  card: MatchCardCommon
+  openMatchId?: string | null
 }
 
 type Quick = 'all' | 'today' | 'live' | 'upcoming' | 'finished'
 
 const GROUP_LETTERS = 'ABCDEFGHIJKL'.split('')
 
-export function ScheduleView({ matches, live, zone, now, isFav, toggleFav }: Props) {
+export function ScheduleView({ matches, live, zone, now, card, openMatchId }: Props) {
   const [quick, setQuick] = useState<Quick>('all')
   const [group, setGroup] = useState<string>('all')
   const [stage, setStage] = useState<string>('all')
@@ -117,8 +117,8 @@ export function ScheduleView({ matches, live, zone, now, isFav, toggleFav }: Pro
                 match={m}
                 live={live[m.id]}
                 zone={zone}
-                isFav={isFav}
-                toggleFav={toggleFav}
+                highlight={openMatchId === m.id}
+                {...card}
               />
             ))}
           </div>

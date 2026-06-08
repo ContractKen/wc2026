@@ -1,16 +1,27 @@
-import { useState } from 'react'
-import type { LiveState, Match, TeamRef } from '../lib/types'
+import { useEffect, useRef, useState } from 'react'
+import type { FollowedPlayer, LiveState, Match, TeamRef } from '../lib/types'
 import { effectiveTeam, hasScore, isFinal, isLive, matchStatus } from '../lib/match'
 import { zoned } from '../lib/time'
 import { VENUES } from '../data/venues'
-import { MatchEvents } from './MatchEvents'
+import { MatchDetail } from './MatchDetail'
+import { BROADCASTERS, type Region } from '../data/broadcasts'
+import { shareUrl } from '../lib/url'
 
-interface Props {
+// Shared per-card handlers/state, bundled so views can forward them in one prop.
+export interface MatchCardCommon {
+  region: Region
+  isFav: (code: string) => boolean
+  toggleFav: (code: string) => void
+  isFollowed: (id: string) => boolean
+  toggleFollow: (p: FollowedPlayer) => void
+  followedNames: Set<string>
+}
+
+type Props = MatchCardCommon & {
   match: Match
   live?: LiveState
   zone: string
-  isFav: (code: string) => boolean
-  toggleFav: (code: string) => void
+  highlight?: boolean
 }
 
 function Flag({ team }: { team: TeamRef }) {
@@ -20,11 +31,22 @@ function Flag({ team }: { team: TeamRef }) {
   return <img className="flag" src={team.flag} alt="" loading="lazy" />
 }
 
-export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
+function watchOn(match: Match, region: Region): string[] {
+  // US match listings come from ESPN; other regions use the rights-holder map.
+  if (region === 'US') return match.broadcast.length ? match.broadcast : BROADCASTERS.US
+  return BROADCASTERS[region]
+}
+
+export function MatchCard({
+  match, live, zone, region, isFav, toggleFav, isFollowed, toggleFollow, followedNames, highlight,
+}: Props) {
   const [open, setOpen] = useState(false)
-  const [showEvents, setShowEvents] = useState(false)
+  const [showDetail, setShowDetail] = useState(!!highlight)
+  const [copied, setCopied] = useState(false)
+  const ref = useRef<HTMLElement>(null)
+
   const live_ = isLive(live)
-  const hasCommentary = live_ || isFinal(live)
+  const hasDetail = live_ || isFinal(live)
   const home = effectiveTeam('home', match, live)
   const away = effectiveTeam('away', match, live)
   const t = zoned(match.utc, zone)
@@ -34,9 +56,27 @@ export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
   const favHome = isFav(home.code)
   const favAway = isFav(away.code)
   const tag = match.stage === 'group' ? `Group ${match.group} · MD${match.matchday}` : match.round
+  const watch = watchOn(match, region)
+  const mapsUrl = venue
+    ? `https://www.google.com/maps/search/${encodeURIComponent(`${venue.name} ${venue.city}`)}`
+    : ''
+
+  useEffect(() => {
+    if (highlight && ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, [highlight])
+
+  function share() {
+    const url = shareUrl(match.id)
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        setCopied(true)
+        setTimeout(() => setCopied(false), 1500)
+      })
+    }
+  }
 
   return (
-    <article className={`match status-${status.kind}`}>
+    <article ref={ref} className={`match status-${status.kind} ${highlight ? 'match--hl' : ''}`}>
       <div className="match__time">
         <div className="match__clock">{t.time}</div>
         <div className={`tod tod--${t.tod.key}`} title={`${t.tod.label} (${zone})`}>
@@ -50,8 +90,7 @@ export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
             className="star"
             onClick={() => !home.placeholder && toggleFav(home.code)}
             disabled={home.placeholder}
-            title={favHome ? 'Unfavorite' : 'Favorite'}
-            aria-label={`Favorite ${home.name}`}
+            aria-label={`${favHome ? 'Unfollow' : 'Follow'} ${home.name}`}
           >
             {favHome ? '★' : '☆'}
           </button>
@@ -72,8 +111,7 @@ export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
             className="star"
             onClick={() => !away.placeholder && toggleFav(away.code)}
             disabled={away.placeholder}
-            title={favAway ? 'Unfavorite' : 'Favorite'}
-            aria-label={`Favorite ${away.name}`}
+            aria-label={`${favAway ? 'Unfollow' : 'Follow'} ${away.name}`}
           >
             {favAway ? '★' : '☆'}
           </button>
@@ -86,21 +124,23 @@ export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
         <span className={`badge badge--${status.kind}`}>{status.text}</span>
         <span className="tag">{tag}</span>
         {venue && (
-          <button className="venue-link" onClick={() => setOpen((v) => !v)}>
+          <button className="venue-link" onClick={() => setOpen((v) => !v)} aria-expanded={open}>
             🏟 {venue.name}, {venue.city} {open ? '▲' : '▼'}
           </button>
         )}
-        {hasCommentary && (
+        {hasDetail && (
           <button
             className={`venue-link commentary-link ${live_ ? 'commentary-link--live' : ''}`}
-            onClick={() => setShowEvents((v) => !v)}
+            onClick={() => setShowDetail((v) => !v)}
+            aria-expanded={showDetail}
           >
-            💬 {live_ ? 'Live commentary' : 'Commentary'} {showEvents ? '▲' : '▼'}
+            💬 {live_ ? 'Live details' : 'Details'} {showDetail ? '▲' : '▼'}
           </button>
         )}
-        {match.broadcast.length > 0 && (
-          <span className="broadcast">📺 {match.broadcast.join(', ')}</span>
-        )}
+        <button className="venue-link" onClick={share} aria-label="Copy share link">
+          {copied ? '✓ Copied' : '🔗 Share'}
+        </button>
+        <span className="broadcast" title="Where to watch">📺 {watch.join(', ')}</span>
       </div>
 
       {open && venue && (
@@ -108,11 +148,23 @@ export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
           <strong>{venue.name}{venue.altName ? ` · ${venue.altName}` : ''}</strong>
           <span className="venue-cap">Capacity ~{venue.capacity.toLocaleString()}</span>
           <p>{venue.tidbit}</p>
+          <a className="venue-map" href={mapsUrl} target="_blank" rel="noopener noreferrer">
+            📍 View on map
+          </a>
         </div>
       )}
 
-      {showEvents && hasCommentary && (
-        <MatchEvents eventId={match.id} live={live_} enabled={showEvents} />
+      {showDetail && hasDetail && (
+        <MatchDetail
+          eventId={match.id}
+          live={live_}
+          enabled={showDetail}
+          homeCode={home.code}
+          awayCode={away.code}
+          isFollowed={isFollowed}
+          onToggleFollow={toggleFollow}
+          followedNames={followedNames}
+        />
       )}
     </article>
   )

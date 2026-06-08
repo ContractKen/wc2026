@@ -3,288 +3,336 @@
   "code": "CZE",
   "name": "Czechia",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
-  "group": "A"
+  "group": "A",
+  "espnId": "450"
  },
  {
   "code": "MEX",
   "name": "Mexico",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-  "group": "A"
+  "group": "A",
+  "espnId": "203"
  },
  {
   "code": "RSA",
   "name": "South Africa",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
-  "group": "A"
+  "group": "A",
+  "espnId": "467"
  },
  {
   "code": "KOR",
   "name": "South Korea",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
-  "group": "A"
+  "group": "A",
+  "espnId": "451"
  },
  {
   "code": "BIH",
   "name": "Bosnia-Herzegovina",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
-  "group": "B"
+  "group": "B",
+  "espnId": "452"
  },
  {
   "code": "CAN",
   "name": "Canada",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
-  "group": "B"
+  "group": "B",
+  "espnId": "206"
  },
  {
   "code": "QAT",
   "name": "Qatar",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
-  "group": "B"
+  "group": "B",
+  "espnId": "4398"
  },
  {
   "code": "SUI",
   "name": "Switzerland",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-  "group": "B"
+  "group": "B",
+  "espnId": "475"
  },
  {
   "code": "BRA",
   "name": "Brazil",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-  "group": "C"
+  "group": "C",
+  "espnId": "205"
  },
  {
   "code": "HAI",
   "name": "Haiti",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-  "group": "C"
+  "group": "C",
+  "espnId": "2654"
  },
  {
   "code": "MAR",
   "name": "Morocco",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-  "group": "C"
+  "group": "C",
+  "espnId": "2869"
  },
  {
   "code": "SCO",
   "name": "Scotland",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-  "group": "C"
+  "group": "C",
+  "espnId": "580"
  },
  {
   "code": "AUS",
   "name": "Australia",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-  "group": "D"
+  "group": "D",
+  "espnId": "628"
  },
  {
   "code": "PAR",
   "name": "Paraguay",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-  "group": "D"
+  "group": "D",
+  "espnId": "210"
  },
  {
   "code": "TUR",
   "name": "Türkiye",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-  "group": "D"
+  "group": "D",
+  "espnId": "465"
  },
  {
   "code": "USA",
   "name": "United States",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-  "group": "D"
+  "group": "D",
+  "espnId": "660"
  },
  {
   "code": "CUW",
   "name": "Curaçao",
   "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
-  "group": "E"
+  "group": "E",
+  "espnId": "11678"
  },
  {
   "code": "ECU",
   "name": "Ecuador",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
-  "group": "E"
+  "group": "E",
+  "espnId": "209"
  },
  {
   "code": "GER",
   "name": "Germany",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-  "group": "E"
+  "group": "E",
+  "espnId": "481"
  },
  {
   "code": "CIV",
   "name": "Ivory Coast",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-  "group": "E"
+  "group": "E",
+  "espnId": "4789"
  },
  {
   "code": "JPN",
   "name": "Japan",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
-  "group": "F"
+  "group": "F",
+  "espnId": "627"
  },
  {
   "code": "NED",
   "name": "Netherlands",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
-  "group": "F"
+  "group": "F",
+  "espnId": "449"
  },
  {
   "code": "SWE",
   "name": "Sweden",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-  "group": "F"
+  "group": "F",
+  "espnId": "466"
  },
  {
   "code": "TUN",
   "name": "Tunisia",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
-  "group": "F"
+  "group": "F",
+  "espnId": "659"
  },
  {
   "code": "BEL",
   "name": "Belgium",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-  "group": "G"
+  "group": "G",
+  "espnId": "459"
  },
  {
   "code": "EGY",
   "name": "Egypt",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-  "group": "G"
+  "group": "G",
+  "espnId": "2620"
  },
  {
   "code": "IRN",
   "name": "Iran",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
-  "group": "G"
+  "group": "G",
+  "espnId": "469"
  },
  {
   "code": "NZL",
   "name": "New Zealand",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
-  "group": "G"
+  "group": "G",
+  "espnId": "2666"
  },
  {
   "code": "CPV",
   "name": "Cape Verde",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
-  "group": "H"
+  "group": "H",
+  "espnId": "2597"
  },
  {
   "code": "KSA",
   "name": "Saudi Arabia",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
-  "group": "H"
+  "group": "H",
+  "espnId": "655"
  },
  {
   "code": "ESP",
   "name": "Spain",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-  "group": "H"
+  "group": "H",
+  "espnId": "164"
  },
  {
   "code": "URU",
   "name": "Uruguay",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-  "group": "H"
+  "group": "H",
+  "espnId": "212"
  },
  {
   "code": "FRA",
   "name": "France",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-  "group": "I"
+  "group": "I",
+  "espnId": "478"
  },
  {
   "code": "IRQ",
   "name": "Iraq",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
-  "group": "I"
+  "group": "I",
+  "espnId": "4375"
  },
  {
   "code": "NOR",
   "name": "Norway",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-  "group": "I"
+  "group": "I",
+  "espnId": "464"
  },
  {
   "code": "SEN",
   "name": "Senegal",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
-  "group": "I"
+  "group": "I",
+  "espnId": "654"
  },
  {
   "code": "ALG",
   "name": "Algeria",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
-  "group": "J"
+  "group": "J",
+  "espnId": "624"
  },
  {
   "code": "ARG",
   "name": "Argentina",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-  "group": "J"
+  "group": "J",
+  "espnId": "202"
  },
  {
   "code": "AUT",
   "name": "Austria",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
-  "group": "J"
+  "group": "J",
+  "espnId": "474"
  },
  {
   "code": "JOR",
   "name": "Jordan",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
-  "group": "J"
+  "group": "J",
+  "espnId": "2917"
  },
  {
   "code": "COL",
   "name": "Colombia",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-  "group": "K"
+  "group": "K",
+  "espnId": "208"
  },
  {
   "code": "COD",
   "name": "Congo DR",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
-  "group": "K"
+  "group": "K",
+  "espnId": "2850"
  },
  {
   "code": "POR",
   "name": "Portugal",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-  "group": "K"
+  "group": "K",
+  "espnId": "482"
  },
  {
   "code": "UZB",
   "name": "Uzbekistan",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
-  "group": "K"
+  "group": "K",
+  "espnId": "2570"
  },
  {
   "code": "CRO",
   "name": "Croatia",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
-  "group": "L"
+  "group": "L",
+  "espnId": "477"
  },
  {
   "code": "ENG",
   "name": "England",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-  "group": "L"
+  "group": "L",
+  "espnId": "448"
  },
  {
   "code": "GHA",
   "name": "Ghana",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
-  "group": "L"
+  "group": "L",
+  "espnId": "4469"
  },
  {
   "code": "PAN",
   "name": "Panama",
   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
-  "group": "L"
+  "group": "L",
+  "espnId": "2659"
  }
 ]

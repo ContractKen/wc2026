@@ -15,7 +15,7 @@ export function LiveTicker({ matches, live, zone, now }: Props) {
 
   if (liveMatches.length > 0) {
     return (
-      <div className="ticker ticker--live">
+      <div className="ticker ticker--live" role="status" aria-live="polite" aria-label="Live matches">
         <span className="ticker__pill">● LIVE</span>
         <div className="ticker__track">
           {liveMatches.map((m) => {

@@ -28,6 +28,7 @@ export interface Team {
   name: string
   flag: string
   group: string
+  espnId?: string
 }
 
 export type MatchState = 'pre' | 'in' | 'post'
@@ -62,9 +63,61 @@ export interface CommentaryItem {
   text: string
 }
 
+export interface LineupPlayer {
+  id: string
+  name: string
+  pos: string
+  jersey: string
+  starter: boolean
+  subbedIn: boolean
+  subbedOut: boolean
+}
+
+export interface Lineup {
+  homeAway: 'home' | 'away'
+  teamName: string
+  formation: string
+  players: LineupPlayer[]
+}
+
+export interface TeamStat {
+  name: string
+  label: string
+  value: string
+}
+
+export interface TeamStats {
+  homeAway: 'home' | 'away'
+  teamName: string
+  stats: TeamStat[]
+}
+
+export interface H2HGame {
+  date: string
+  score: string
+  competition: string
+  result: string // W / L / D from the perspective stored
+}
+
 export interface MatchSummary {
   events: MatchEvent[]
   commentary: CommentaryItem[]
+  lineups: Lineup[]
+  stats: TeamStats[]
+  h2h: H2HGame[]
+}
+
+export interface SquadPlayer {
+  id: string
+  name: string
+  pos: string
+  jersey: string
+}
+
+export interface FollowedPlayer {
+  id: string
+  name: string
+  teamCode: string
 }
 
 export interface Venue {

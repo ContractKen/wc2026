@@ -19,4 +19,7 @@ export function save<T>(key: string, value: T): void {
 export const KEYS = {
   timezone: 'wc2026.timezone',
   favorites: 'wc2026.favorites',
+  players: 'wc2026.players',
+  alertScope: 'wc2026.alertScope',
+  region: 'wc2026.region',
 } as const
