@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import type { LiveState, Match, TeamRef } from '../lib/types'
-import { effectiveTeam, hasScore, matchStatus } from '../lib/match'
+import { effectiveTeam, hasScore, isFinal, isLive, matchStatus } from '../lib/match'
 import { zoned } from '../lib/time'
 import { VENUES } from '../data/venues'
+import { MatchEvents } from './MatchEvents'
 
 interface Props {
   match: Match
@@ -21,6 +22,9 @@ function Flag({ team }: { team: TeamRef }) {
 
 export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
   const [open, setOpen] = useState(false)
+  const [showEvents, setShowEvents] = useState(false)
+  const live_ = isLive(live)
+  const hasCommentary = live_ || isFinal(live)
   const home = effectiveTeam('home', match, live)
   const away = effectiveTeam('away', match, live)
   const t = zoned(match.utc, zone)
@@ -86,6 +90,14 @@ export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
             🏟 {venue.name}, {venue.city} {open ? '▲' : '▼'}
           </button>
         )}
+        {hasCommentary && (
+          <button
+            className={`venue-link commentary-link ${live_ ? 'commentary-link--live' : ''}`}
+            onClick={() => setShowEvents((v) => !v)}
+          >
+            💬 {live_ ? 'Live commentary' : 'Commentary'} {showEvents ? '▲' : '▼'}
+          </button>
+        )}
         {match.broadcast.length > 0 && (
           <span className="broadcast">📺 {match.broadcast.join(', ')}</span>
         )}
@@ -97,6 +109,10 @@ export function MatchCard({ match, live, zone, isFav, toggleFav }: Props) {
           <span className="venue-cap">Capacity ~{venue.capacity.toLocaleString()}</span>
           <p>{venue.tidbit}</p>
         </div>
+      )}
+
+      {showEvents && hasCommentary && (
+        <MatchEvents eventId={match.id} live={live_} enabled={showEvents} />
       )}
     </article>
   )

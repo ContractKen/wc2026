@@ -15,5 +15,19 @@ export function useFavorites() {
 
   const isFavorite = useCallback((code: string) => set.has(code), [set])
 
-  return { favorites: set, toggle, isFavorite, count: codes.length }
+  // Bulk add or remove a list of codes in one update (used by the country picker).
+  const setMany = useCallback((list: string[], selected: boolean) => {
+    setCodes((prev) => {
+      const s = new Set(prev)
+      for (const c of list) {
+        if (selected) s.add(c)
+        else s.delete(c)
+      }
+      const next = [...s]
+      save(KEYS.favorites, next)
+      return next
+    })
+  }, [])
+
+  return { favorites: set, toggle, setMany, isFavorite, count: codes.length }
 }

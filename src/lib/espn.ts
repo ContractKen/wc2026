@@ -1,4 +1,4 @@
-import type { LiveState, TeamRef } from './types'
+import type { CommentaryItem, LiveState, MatchEvent, MatchSummary, TeamRef } from './types'
 
 // In dev we hit the Vite proxy (/espn -> site.api.espn.com) to dodge CORS.
 // A production build calls ESPN directly (it returns permissive CORS headers).
@@ -7,6 +7,7 @@ const BASE = import.meta.env.DEV
   : 'https://site.api.espn.com'
 
 const SCOREBOARD = `${BASE}/apis/site/v2/sports/soccer/fifa.world/scoreboard`
+const SUMMARY = `${BASE}/apis/site/v2/sports/soccer/fifa.world/summary`
 
 interface RawStatusType {
   state?: string
@@ -92,6 +93,66 @@ function index(events: RawEvent[]): LiveMap {
 // Full tournament snapshot — used once on load to capture any finished results.
 export async function fetchAll(): Promise<LiveMap> {
   return index(await fetchEvents('20260611-20260719'))
+}
+
+// ---- Match summary: key events + running commentary ----
+
+interface RawKeyEvent {
+  id?: string
+  type?: { text?: string; type?: string }
+  text?: string
+  shortText?: string
+  clock?: { displayValue?: string }
+  period?: { number?: number }
+  scoringPlay?: boolean
+  team?: { displayName?: string }
+}
+
+interface RawCommentary {
+  sequence?: number
+  time?: { displayValue?: string }
+  text?: string
+}
+
+function classify(typeText: string, rawType: string, scoring: boolean): MatchEvent['kind'] {
+  const s = `${typeText} ${rawType}`.toLowerCase()
+  if (s.includes('yellow')) return s.includes('second') ? 'red' : 'yellow'
+  if (s.includes('red')) return 'red'
+  if (s.includes('substitut')) return 'sub'
+  if (s.includes('var') || s.includes('video')) return 'var'
+  if (s.includes('miss') || s.includes('saved')) return 'penalty-miss'
+  if (scoring || s.includes('goal')) return 'goal'
+  if (s.includes('kickoff') || s.includes('end') || s.includes('half') || s.includes('whistle'))
+    return 'whistle'
+  return 'other'
+}
+
+export async function fetchSummary(eventId: string): Promise<MatchSummary> {
+  const res = await fetch(`${SUMMARY}?event=${eventId}`, { headers: { accept: 'application/json' } })
+  if (!res.ok) throw new Error(`ESPN summary ${res.status}`)
+  const data = (await res.json()) as { keyEvents?: RawKeyEvent[]; commentary?: RawCommentary[] }
+
+  const events: MatchEvent[] = (data.keyEvents || []).map((e, i) => {
+    const typeText = e.type?.text || ''
+    return {
+      id: e.id || String(i),
+      typeText,
+      kind: classify(typeText, e.type?.type || '', !!e.scoringPlay),
+      text: e.text || e.shortText || typeText,
+      clock: e.clock?.displayValue || '',
+      period: e.period?.number || 0,
+      scoringPlay: !!e.scoringPlay,
+      team: e.team?.displayName || '',
+    }
+  })
+
+  const commentary: CommentaryItem[] = (data.commentary || []).map((c, i) => ({
+    sequence: c.sequence ?? i,
+    clock: c.time?.displayValue || '',
+    text: c.text || '',
+  }))
+
+  return { events, commentary }
 }
 
 // Narrow window around "now" (UTC) — cheap to poll frequently for live updates.

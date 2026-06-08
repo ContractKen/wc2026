@@ -45,6 +45,28 @@ export interface LiveState {
   away?: TeamRef
 }
 
+export interface MatchEvent {
+  id: string
+  typeText: string // "Goal", "Yellow Card", "Substitution"…
+  kind: 'goal' | 'yellow' | 'red' | 'sub' | 'var' | 'penalty-miss' | 'whistle' | 'other'
+  text: string
+  clock: string // "23'", "90'+5'"
+  period: number
+  scoringPlay: boolean
+  team: string // team display name, if any
+}
+
+export interface CommentaryItem {
+  sequence: number
+  clock: string
+  text: string
+}
+
+export interface MatchSummary {
+  events: MatchEvent[]
+  commentary: CommentaryItem[]
+}
+
 export interface Venue {
   id: string
   name: string

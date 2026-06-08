@@ -20,7 +20,24 @@ function teamName(side: 'home' | 'away', m: Match, ls?: LiveState): string {
   return m[side].name
 }
 
-export function matchesToICS(matches: Match[], live: LiveMap, label = 'FIFA World Cup 2026'): string {
+// Minutes-before-kickoff → an iCalendar TRIGGER duration (e.g. 60 → "-PT1H").
+function trigger(minutes: number): string {
+  if (minutes === 0) return '-PT0M' // at kickoff
+  if (minutes % (7 * 24 * 60) === 0) return `-P${minutes / (7 * 24 * 60)}W`
+  if (minutes % (24 * 60) === 0) return `-P${minutes / (24 * 60)}D`
+  if (minutes % 60 === 0) return `-PT${minutes / 60}H`
+  return `-PT${minutes}M`
+}
+
+export interface ICSOptions {
+  label?: string
+  // Reminder lead times in minutes before kickoff; each becomes a VALARM.
+  alarms?: number[]
+}
+
+export function matchesToICS(matches: Match[], live: LiveMap, opts: ICSOptions = {}): string {
+  const label = opts.label ?? 'FIFA World Cup 2026'
+  const alarms = opts.alarms ?? []
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -46,8 +63,17 @@ export function matchesToICS(matches: Match[], live: LiveMap, label = 'FIFA Worl
       `SUMMARY:${escape(summary)}`,
       `LOCATION:${escape(loc)}`,
       m.broadcast.length ? `DESCRIPTION:${escape('Broadcast: ' + m.broadcast.join(', '))}` : '',
-      'END:VEVENT',
     )
+    for (const mins of alarms) {
+      lines.push(
+        'BEGIN:VALARM',
+        'ACTION:DISPLAY',
+        `DESCRIPTION:${escape(summary)}`,
+        `TRIGGER:${trigger(mins)}`,
+        'END:VALARM',
+      )
+    }
+    lines.push('END:VEVENT')
   }
   lines.push('END:VCALENDAR')
   return lines.filter(Boolean).join('\r\n')

@@ -30,7 +30,7 @@ function useNow(intervalMs = 30_000) {
 export default function App() {
   const [tab, setTab] = useState<Tab>('schedule')
   const { tzId, zone, setTimezone } = useTimezone()
-  const { favorites, isFavorite, toggle, count } = useFavorites()
+  const { favorites, isFavorite, toggle, setMany, count } = useFavorites()
   const { live, status, updatedAt } = useLiveScores()
   const now = useNow()
 
@@ -40,7 +40,7 @@ export default function App() {
     { id: 'schedule', label: 'Schedule' },
     { id: 'groups', label: 'Groups' },
     { id: 'bracket', label: 'Bracket' },
-    { id: 'favorites', label: 'Favorites', badge: count || undefined },
+    { id: 'favorites', label: 'My Teams', badge: count || undefined },
   ]
 
   return (
@@ -87,6 +87,7 @@ export default function App() {
             favorites={favorites}
             isFav={isFavorite}
             toggleFav={toggle}
+            setMany={setMany}
           />
         )}
       </main>
