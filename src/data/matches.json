@@ -1,0 +1,2882 @@
+[
+ {
+  "id": "760415",
+  "utc": "2026-06-11T19:00Z",
+  "home": {
+   "code": "MEX",
+   "name": "Mexico",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "RSA",
+   "name": "South Africa",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+   "placeholder": false
+  },
+  "venueId": "1672",
+  "venue": "Estadio Banorte",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "A",
+  "matchday": 1
+ },
+ {
+  "id": "760414",
+  "utc": "2026-06-12T02:00Z",
+  "home": {
+   "code": "KOR",
+   "name": "South Korea",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CZE",
+   "name": "Czechia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+   "placeholder": false
+  },
+  "venueId": "5009",
+  "venue": "Estadio Akron",
+  "city": "Guadalajara",
+  "country": "Mexico",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "A",
+  "matchday": 1
+ },
+ {
+  "id": "760416",
+  "utc": "2026-06-12T19:00Z",
+  "home": {
+   "code": "CAN",
+   "name": "Canada",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "BIH",
+   "name": "Bosnia-Herzegovina",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+   "placeholder": false
+  },
+  "venueId": "10143",
+  "venue": "BMO Field",
+  "city": "Toronto",
+  "country": "Canada",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "B",
+  "matchday": 1
+ },
+ {
+  "id": "760417",
+  "utc": "2026-06-13T01:00Z",
+  "home": {
+   "code": "USA",
+   "name": "United States",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "PAR",
+   "name": "Paraguay",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+   "placeholder": false
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "D",
+  "matchday": 1
+ },
+ {
+  "id": "760420",
+  "utc": "2026-06-13T19:00Z",
+  "home": {
+   "code": "QAT",
+   "name": "Qatar",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "SUI",
+   "name": "Switzerland",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+   "placeholder": false
+  },
+  "venueId": "5960",
+  "venue": "Levi's Stadium",
+  "city": "Santa Clara, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "B",
+  "matchday": 1
+ },
+ {
+  "id": "760419",
+  "utc": "2026-06-13T22:00Z",
+  "home": {
+   "code": "BRA",
+   "name": "Brazil",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "MAR",
+   "name": "Morocco",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+   "placeholder": false
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "C",
+  "matchday": 1
+ },
+ {
+  "id": "760418",
+  "utc": "2026-06-14T01:00Z",
+  "home": {
+   "code": "HAI",
+   "name": "Haiti",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "SCO",
+   "name": "Scotland",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+   "placeholder": false
+  },
+  "venueId": "10660",
+  "venue": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "C",
+  "matchday": 1
+ },
+ {
+  "id": "760421",
+  "utc": "2026-06-14T04:00Z",
+  "home": {
+   "code": "AUS",
+   "name": "Australia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "TUR",
+   "name": "Türkiye",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+   "placeholder": false
+  },
+  "venueId": "4370",
+  "venue": "BC Place",
+  "city": "Vancouver",
+  "country": "Canada",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "D",
+  "matchday": 1
+ },
+ {
+  "id": "760422",
+  "utc": "2026-06-14T17:00Z",
+  "home": {
+   "code": "GER",
+   "name": "Germany",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CUW",
+   "name": "Curaçao",
+   "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+   "placeholder": false
+  },
+  "venueId": "6262",
+  "venue": "NRG Stadium",
+  "city": "Houston, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "E",
+  "matchday": 1
+ },
+ {
+  "id": "760425",
+  "utc": "2026-06-14T20:00Z",
+  "home": {
+   "code": "NED",
+   "name": "Netherlands",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "JPN",
+   "name": "Japan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+   "placeholder": false
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "F",
+  "matchday": 1
+ },
+ {
+  "id": "760423",
+  "utc": "2026-06-14T23:00Z",
+  "home": {
+   "code": "CIV",
+   "name": "Ivory Coast",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "ECU",
+   "name": "Ecuador",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+   "placeholder": false
+  },
+  "venueId": "1421",
+  "venue": "Lincoln Financial Field",
+  "city": "Philadelphia, Pennsylvania",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "E",
+  "matchday": 1
+ },
+ {
+  "id": "760424",
+  "utc": "2026-06-15T02:00Z",
+  "home": {
+   "code": "SWE",
+   "name": "Sweden",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "TUN",
+   "name": "Tunisia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+   "placeholder": false
+  },
+  "venueId": "6351",
+  "venue": "Estadio BBVA",
+  "city": "Guadalupe",
+  "country": "Mexico",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "F",
+  "matchday": 1
+ },
+ {
+  "id": "760428",
+  "utc": "2026-06-15T16:00Z",
+  "home": {
+   "code": "ESP",
+   "name": "Spain",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CPV",
+   "name": "Cape Verde",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+   "placeholder": false
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "H",
+  "matchday": 1
+ },
+ {
+  "id": "760426",
+  "utc": "2026-06-15T19:00Z",
+  "home": {
+   "code": "BEL",
+   "name": "Belgium",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "EGY",
+   "name": "Egypt",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+   "placeholder": false
+  },
+  "venueId": "4485",
+  "venue": "Lumen Field",
+  "city": "Seattle, Washington",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "G",
+  "matchday": 1
+ },
+ {
+  "id": "760429",
+  "utc": "2026-06-15T22:00Z",
+  "home": {
+   "code": "KSA",
+   "name": "Saudi Arabia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "URU",
+   "name": "Uruguay",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+   "placeholder": false
+  },
+  "venueId": "4643",
+  "venue": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "H",
+  "matchday": 1
+ },
+ {
+  "id": "760427",
+  "utc": "2026-06-16T01:00Z",
+  "home": {
+   "code": "IRN",
+   "name": "Iran",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "NZL",
+   "name": "New Zealand",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+   "placeholder": false
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "G",
+  "matchday": 1
+ },
+ {
+  "id": "760432",
+  "utc": "2026-06-16T19:00Z",
+  "home": {
+   "code": "FRA",
+   "name": "France",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "SEN",
+   "name": "Senegal",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+   "placeholder": false
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "I",
+  "matchday": 1
+ },
+ {
+  "id": "760430",
+  "utc": "2026-06-16T22:00Z",
+  "home": {
+   "code": "IRQ",
+   "name": "Iraq",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "NOR",
+   "name": "Norway",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+   "placeholder": false
+  },
+  "venueId": "10660",
+  "venue": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "I",
+  "matchday": 1
+ },
+ {
+  "id": "760433",
+  "utc": "2026-06-17T01:00Z",
+  "home": {
+   "code": "ARG",
+   "name": "Argentina",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "ALG",
+   "name": "Algeria",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+   "placeholder": false
+  },
+  "venueId": "10897",
+  "venue": "GEHA Field at Arrowhead Stadium",
+  "city": "Kansas City, Missouri",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "J",
+  "matchday": 1
+ },
+ {
+  "id": "760431",
+  "utc": "2026-06-17T04:00Z",
+  "home": {
+   "code": "AUT",
+   "name": "Austria",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "JOR",
+   "name": "Jordan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+   "placeholder": false
+  },
+  "venueId": "5960",
+  "venue": "Levi's Stadium",
+  "city": "Santa Clara, California",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "J",
+  "matchday": 1
+ },
+ {
+  "id": "760435",
+  "utc": "2026-06-17T17:00Z",
+  "home": {
+   "code": "POR",
+   "name": "Portugal",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "COD",
+   "name": "Congo DR",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+   "placeholder": false
+  },
+  "venueId": "6262",
+  "venue": "NRG Stadium",
+  "city": "Houston, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "K",
+  "matchday": 1
+ },
+ {
+  "id": "760437",
+  "utc": "2026-06-17T20:00Z",
+  "home": {
+   "code": "ENG",
+   "name": "England",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CRO",
+   "name": "Croatia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+   "placeholder": false
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "L",
+  "matchday": 1
+ },
+ {
+  "id": "760434",
+  "utc": "2026-06-17T23:00Z",
+  "home": {
+   "code": "GHA",
+   "name": "Ghana",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "PAN",
+   "name": "Panama",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+   "placeholder": false
+  },
+  "venueId": "10143",
+  "venue": "BMO Field",
+  "city": "Toronto",
+  "country": "Canada",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "L",
+  "matchday": 1
+ },
+ {
+  "id": "760436",
+  "utc": "2026-06-18T02:00Z",
+  "home": {
+   "code": "UZB",
+   "name": "Uzbekistan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "COL",
+   "name": "Colombia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+   "placeholder": false
+  },
+  "venueId": "1672",
+  "venue": "Estadio Banorte",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "K",
+  "matchday": 1
+ },
+ {
+  "id": "760438",
+  "utc": "2026-06-18T16:00Z",
+  "home": {
+   "code": "CZE",
+   "name": "Czechia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "RSA",
+   "name": "South Africa",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+   "placeholder": false
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "A",
+  "matchday": 2
+ },
+ {
+  "id": "760439",
+  "utc": "2026-06-18T19:00Z",
+  "home": {
+   "code": "SUI",
+   "name": "Switzerland",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "BIH",
+   "name": "Bosnia-Herzegovina",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+   "placeholder": false
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "B",
+  "matchday": 2
+ },
+ {
+  "id": "760440",
+  "utc": "2026-06-18T22:00Z",
+  "home": {
+   "code": "CAN",
+   "name": "Canada",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "QAT",
+   "name": "Qatar",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+   "placeholder": false
+  },
+  "venueId": "4370",
+  "venue": "BC Place",
+  "city": "Vancouver",
+  "country": "Canada",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "B",
+  "matchday": 2
+ },
+ {
+  "id": "760441",
+  "utc": "2026-06-19T01:00Z",
+  "home": {
+   "code": "MEX",
+   "name": "Mexico",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "KOR",
+   "name": "South Korea",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+   "placeholder": false
+  },
+  "venueId": "5009",
+  "venue": "Estadio Akron",
+  "city": "Guadalajara",
+  "country": "Mexico",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "A",
+  "matchday": 2
+ },
+ {
+  "id": "760442",
+  "utc": "2026-06-19T19:00Z",
+  "home": {
+   "code": "USA",
+   "name": "United States",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "AUS",
+   "name": "Australia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+   "placeholder": false
+  },
+  "venueId": "4485",
+  "venue": "Lumen Field",
+  "city": "Seattle, Washington",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "D",
+  "matchday": 2
+ },
+ {
+  "id": "760445",
+  "utc": "2026-06-19T22:00Z",
+  "home": {
+   "code": "SCO",
+   "name": "Scotland",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "MAR",
+   "name": "Morocco",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+   "placeholder": false
+  },
+  "venueId": "10660",
+  "venue": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "C",
+  "matchday": 2
+ },
+ {
+  "id": "760444",
+  "utc": "2026-06-20T00:30Z",
+  "home": {
+   "code": "BRA",
+   "name": "Brazil",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "HAI",
+   "name": "Haiti",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+   "placeholder": false
+  },
+  "venueId": "1421",
+  "venue": "Lincoln Financial Field",
+  "city": "Philadelphia, Pennsylvania",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "C",
+  "matchday": 2
+ },
+ {
+  "id": "760443",
+  "utc": "2026-06-20T03:00Z",
+  "home": {
+   "code": "TUR",
+   "name": "Türkiye",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "PAR",
+   "name": "Paraguay",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+   "placeholder": false
+  },
+  "venueId": "5960",
+  "venue": "Levi's Stadium",
+  "city": "Santa Clara, California",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "D",
+  "matchday": 2
+ },
+ {
+  "id": "760447",
+  "utc": "2026-06-20T17:00Z",
+  "home": {
+   "code": "NED",
+   "name": "Netherlands",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "SWE",
+   "name": "Sweden",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+   "placeholder": false
+  },
+  "venueId": "6262",
+  "venue": "NRG Stadium",
+  "city": "Houston, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "F",
+  "matchday": 2
+ },
+ {
+  "id": "760448",
+  "utc": "2026-06-20T20:00Z",
+  "home": {
+   "code": "GER",
+   "name": "Germany",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CIV",
+   "name": "Ivory Coast",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+   "placeholder": false
+  },
+  "venueId": "10143",
+  "venue": "BMO Field",
+  "city": "Toronto",
+  "country": "Canada",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "E",
+  "matchday": 2
+ },
+ {
+  "id": "760446",
+  "utc": "2026-06-21T00:00Z",
+  "home": {
+   "code": "ECU",
+   "name": "Ecuador",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CUW",
+   "name": "Curaçao",
+   "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+   "placeholder": false
+  },
+  "venueId": "10897",
+  "venue": "GEHA Field at Arrowhead Stadium",
+  "city": "Kansas City, Missouri",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "E",
+  "matchday": 2
+ },
+ {
+  "id": "760449",
+  "utc": "2026-06-21T04:00Z",
+  "home": {
+   "code": "TUN",
+   "name": "Tunisia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "JPN",
+   "name": "Japan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+   "placeholder": false
+  },
+  "venueId": "6351",
+  "venue": "Estadio BBVA",
+  "city": "Guadalupe",
+  "country": "Mexico",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "F",
+  "matchday": 2
+ },
+ {
+  "id": "760453",
+  "utc": "2026-06-21T16:00Z",
+  "home": {
+   "code": "ESP",
+   "name": "Spain",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "KSA",
+   "name": "Saudi Arabia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+   "placeholder": false
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "H",
+  "matchday": 2
+ },
+ {
+  "id": "760451",
+  "utc": "2026-06-21T19:00Z",
+  "home": {
+   "code": "BEL",
+   "name": "Belgium",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "IRN",
+   "name": "Iran",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+   "placeholder": false
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "G",
+  "matchday": 2
+ },
+ {
+  "id": "760450",
+  "utc": "2026-06-21T22:00Z",
+  "home": {
+   "code": "URU",
+   "name": "Uruguay",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CPV",
+   "name": "Cape Verde",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+   "placeholder": false
+  },
+  "venueId": "4643",
+  "venue": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "H",
+  "matchday": 2
+ },
+ {
+  "id": "760452",
+  "utc": "2026-06-22T01:00Z",
+  "home": {
+   "code": "NZL",
+   "name": "New Zealand",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "EGY",
+   "name": "Egypt",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+   "placeholder": false
+  },
+  "venueId": "4370",
+  "venue": "BC Place",
+  "city": "Vancouver",
+  "country": "Canada",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "G",
+  "matchday": 2
+ },
+ {
+  "id": "760456",
+  "utc": "2026-06-22T17:00Z",
+  "home": {
+   "code": "ARG",
+   "name": "Argentina",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "AUT",
+   "name": "Austria",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+   "placeholder": false
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "J",
+  "matchday": 2
+ },
+ {
+  "id": "760457",
+  "utc": "2026-06-22T21:00Z",
+  "home": {
+   "code": "FRA",
+   "name": "France",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "IRQ",
+   "name": "Iraq",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+   "placeholder": false
+  },
+  "venueId": "1421",
+  "venue": "Lincoln Financial Field",
+  "city": "Philadelphia, Pennsylvania",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "I",
+  "matchday": 2
+ },
+ {
+  "id": "760454",
+  "utc": "2026-06-23T00:00Z",
+  "home": {
+   "code": "NOR",
+   "name": "Norway",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "SEN",
+   "name": "Senegal",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+   "placeholder": false
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "I",
+  "matchday": 2
+ },
+ {
+  "id": "760455",
+  "utc": "2026-06-23T03:00Z",
+  "home": {
+   "code": "JOR",
+   "name": "Jordan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "ALG",
+   "name": "Algeria",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+   "placeholder": false
+  },
+  "venueId": "5960",
+  "venue": "Levi's Stadium",
+  "city": "Santa Clara, California",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "J",
+  "matchday": 2
+ },
+ {
+  "id": "760461",
+  "utc": "2026-06-23T17:00Z",
+  "home": {
+   "code": "POR",
+   "name": "Portugal",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "UZB",
+   "name": "Uzbekistan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+   "placeholder": false
+  },
+  "venueId": "6262",
+  "venue": "NRG Stadium",
+  "city": "Houston, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "K",
+  "matchday": 2
+ },
+ {
+  "id": "760458",
+  "utc": "2026-06-23T20:00Z",
+  "home": {
+   "code": "ENG",
+   "name": "England",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "GHA",
+   "name": "Ghana",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+   "placeholder": false
+  },
+  "venueId": "10660",
+  "venue": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "L",
+  "matchday": 2
+ },
+ {
+  "id": "760460",
+  "utc": "2026-06-23T23:00Z",
+  "home": {
+   "code": "PAN",
+   "name": "Panama",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CRO",
+   "name": "Croatia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+   "placeholder": false
+  },
+  "venueId": "10143",
+  "venue": "BMO Field",
+  "city": "Toronto",
+  "country": "Canada",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "L",
+  "matchday": 2
+ },
+ {
+  "id": "760459",
+  "utc": "2026-06-24T02:00Z",
+  "home": {
+   "code": "COL",
+   "name": "Colombia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "COD",
+   "name": "Congo DR",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+   "placeholder": false
+  },
+  "venueId": "5009",
+  "venue": "Estadio Akron",
+  "city": "Guadalajara",
+  "country": "Mexico",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "K",
+  "matchday": 2
+ },
+ {
+  "id": "760462",
+  "utc": "2026-06-24T19:00Z",
+  "home": {
+   "code": "BIH",
+   "name": "Bosnia-Herzegovina",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "QAT",
+   "name": "Qatar",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+   "placeholder": false
+  },
+  "venueId": "4485",
+  "venue": "Lumen Field",
+  "city": "Seattle, Washington",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "B",
+  "matchday": 3
+ },
+ {
+  "id": "760463",
+  "utc": "2026-06-24T19:00Z",
+  "home": {
+   "code": "SUI",
+   "name": "Switzerland",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CAN",
+   "name": "Canada",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+   "placeholder": false
+  },
+  "venueId": "4370",
+  "venue": "BC Place",
+  "city": "Vancouver",
+  "country": "Canada",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "B",
+  "matchday": 3
+ },
+ {
+  "id": "760464",
+  "utc": "2026-06-24T22:00Z",
+  "home": {
+   "code": "MAR",
+   "name": "Morocco",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "HAI",
+   "name": "Haiti",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+   "placeholder": false
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "C",
+  "matchday": 3
+ },
+ {
+  "id": "760465",
+  "utc": "2026-06-24T22:00Z",
+  "home": {
+   "code": "SCO",
+   "name": "Scotland",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "BRA",
+   "name": "Brazil",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+   "placeholder": false
+  },
+  "venueId": "4643",
+  "venue": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "C",
+  "matchday": 3
+ },
+ {
+  "id": "760466",
+  "utc": "2026-06-25T01:00Z",
+  "home": {
+   "code": "RSA",
+   "name": "South Africa",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "KOR",
+   "name": "South Korea",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+   "placeholder": false
+  },
+  "venueId": "6351",
+  "venue": "Estadio BBVA",
+  "city": "Guadalupe",
+  "country": "Mexico",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "A",
+  "matchday": 3
+ },
+ {
+  "id": "760467",
+  "utc": "2026-06-25T01:00Z",
+  "home": {
+   "code": "CZE",
+   "name": "Czechia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "MEX",
+   "name": "Mexico",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+   "placeholder": false
+  },
+  "venueId": "1672",
+  "venue": "Estadio Banorte",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "A",
+  "matchday": 3
+ },
+ {
+  "id": "760468",
+  "utc": "2026-06-25T20:00Z",
+  "home": {
+   "code": "ECU",
+   "name": "Ecuador",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "GER",
+   "name": "Germany",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+   "placeholder": false
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "E",
+  "matchday": 3
+ },
+ {
+  "id": "760473",
+  "utc": "2026-06-25T20:00Z",
+  "home": {
+   "code": "CUW",
+   "name": "Curaçao",
+   "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "CIV",
+   "name": "Ivory Coast",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+   "placeholder": false
+  },
+  "venueId": "1421",
+  "venue": "Lincoln Financial Field",
+  "city": "Philadelphia, Pennsylvania",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "E",
+  "matchday": 3
+ },
+ {
+  "id": "760471",
+  "utc": "2026-06-25T23:00Z",
+  "home": {
+   "code": "JPN",
+   "name": "Japan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "SWE",
+   "name": "Sweden",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+   "placeholder": false
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "F",
+  "matchday": 3
+ },
+ {
+  "id": "760472",
+  "utc": "2026-06-25T23:00Z",
+  "home": {
+   "code": "TUN",
+   "name": "Tunisia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "NED",
+   "name": "Netherlands",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+   "placeholder": false
+  },
+  "venueId": "10897",
+  "venue": "GEHA Field at Arrowhead Stadium",
+  "city": "Kansas City, Missouri",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "F",
+  "matchday": 3
+ },
+ {
+  "id": "760469",
+  "utc": "2026-06-26T02:00Z",
+  "home": {
+   "code": "PAR",
+   "name": "Paraguay",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "AUS",
+   "name": "Australia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+   "placeholder": false
+  },
+  "venueId": "5960",
+  "venue": "Levi's Stadium",
+  "city": "Santa Clara, California",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "D",
+  "matchday": 3
+ },
+ {
+  "id": "760470",
+  "utc": "2026-06-26T02:00Z",
+  "home": {
+   "code": "TUR",
+   "name": "Türkiye",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "USA",
+   "name": "United States",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+   "placeholder": false
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "D",
+  "matchday": 3
+ },
+ {
+  "id": "760474",
+  "utc": "2026-06-26T19:00Z",
+  "home": {
+   "code": "SEN",
+   "name": "Senegal",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "IRQ",
+   "name": "Iraq",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+   "placeholder": false
+  },
+  "venueId": "10143",
+  "venue": "BMO Field",
+  "city": "Toronto",
+  "country": "Canada",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "I",
+  "matchday": 3
+ },
+ {
+  "id": "760475",
+  "utc": "2026-06-26T19:00Z",
+  "home": {
+   "code": "NOR",
+   "name": "Norway",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "FRA",
+   "name": "France",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+   "placeholder": false
+  },
+  "venueId": "10660",
+  "venue": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "I",
+  "matchday": 3
+ },
+ {
+  "id": "760478",
+  "utc": "2026-06-27T00:00Z",
+  "home": {
+   "code": "CPV",
+   "name": "Cape Verde",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "KSA",
+   "name": "Saudi Arabia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+   "placeholder": false
+  },
+  "venueId": "6262",
+  "venue": "NRG Stadium",
+  "city": "Houston, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "H",
+  "matchday": 3
+ },
+ {
+  "id": "760479",
+  "utc": "2026-06-27T00:00Z",
+  "home": {
+   "code": "URU",
+   "name": "Uruguay",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "ESP",
+   "name": "Spain",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+   "placeholder": false
+  },
+  "venueId": "5009",
+  "venue": "Estadio Akron",
+  "city": "Guadalajara",
+  "country": "Mexico",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "H",
+  "matchday": 3
+ },
+ {
+  "id": "760476",
+  "utc": "2026-06-27T03:00Z",
+  "home": {
+   "code": "EGY",
+   "name": "Egypt",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "IRN",
+   "name": "Iran",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+   "placeholder": false
+  },
+  "venueId": "4485",
+  "venue": "Lumen Field",
+  "city": "Seattle, Washington",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "G",
+  "matchday": 3
+ },
+ {
+  "id": "760477",
+  "utc": "2026-06-27T03:00Z",
+  "home": {
+   "code": "NZL",
+   "name": "New Zealand",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "BEL",
+   "name": "Belgium",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+   "placeholder": false
+  },
+  "venueId": "4370",
+  "venue": "BC Place",
+  "city": "Vancouver",
+  "country": "Canada",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "G",
+  "matchday": 3
+ },
+ {
+  "id": "760480",
+  "utc": "2026-06-27T21:00Z",
+  "home": {
+   "code": "CRO",
+   "name": "Croatia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "GHA",
+   "name": "Ghana",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+   "placeholder": false
+  },
+  "venueId": "1421",
+  "venue": "Lincoln Financial Field",
+  "city": "Philadelphia, Pennsylvania",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "L",
+  "matchday": 3
+ },
+ {
+  "id": "760485",
+  "utc": "2026-06-27T21:00Z",
+  "home": {
+   "code": "PAN",
+   "name": "Panama",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "ENG",
+   "name": "England",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+   "placeholder": false
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "L",
+  "matchday": 3
+ },
+ {
+  "id": "760481",
+  "utc": "2026-06-27T23:30Z",
+  "home": {
+   "code": "COL",
+   "name": "Colombia",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "POR",
+   "name": "Portugal",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+   "placeholder": false
+  },
+  "venueId": "4643",
+  "venue": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "K",
+  "matchday": 3
+ },
+ {
+  "id": "760482",
+  "utc": "2026-06-27T23:30Z",
+  "home": {
+   "code": "COD",
+   "name": "Congo DR",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "UZB",
+   "name": "Uzbekistan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+   "placeholder": false
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "K",
+  "matchday": 3
+ },
+ {
+  "id": "760483",
+  "utc": "2026-06-28T02:00Z",
+  "home": {
+   "code": "JOR",
+   "name": "Jordan",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "ARG",
+   "name": "Argentina",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+   "placeholder": false
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "J",
+  "matchday": 3
+ },
+ {
+  "id": "760484",
+  "utc": "2026-06-28T02:00Z",
+  "home": {
+   "code": "ALG",
+   "name": "Algeria",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+   "placeholder": false
+  },
+  "away": {
+   "code": "AUT",
+   "name": "Austria",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+   "placeholder": false
+  },
+  "venueId": "10897",
+  "venue": "GEHA Field at Arrowhead Stadium",
+  "city": "Kansas City, Missouri",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "group",
+  "group": "J",
+  "matchday": 3
+ },
+ {
+  "id": "760486",
+  "utc": "2026-06-28T19:00Z",
+  "home": {
+   "code": "2A",
+   "name": "Group A 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2B",
+   "name": "Group B 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760487",
+  "utc": "2026-06-29T17:00Z",
+  "home": {
+   "code": "1C",
+   "name": "Group C Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2F",
+   "name": "Group F 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "6262",
+  "venue": "NRG Stadium",
+  "city": "Houston, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760489",
+  "utc": "2026-06-29T20:30Z",
+  "home": {
+   "code": "1E",
+   "name": "Group E Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group A/B/C/D/F",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "10660",
+  "venue": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760488",
+  "utc": "2026-06-30T01:00Z",
+  "home": {
+   "code": "1F",
+   "name": "Group F Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2C",
+   "name": "Group C 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "6351",
+  "venue": "Estadio BBVA",
+  "city": "Guadalupe",
+  "country": "Mexico",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760490",
+  "utc": "2026-06-30T17:00Z",
+  "home": {
+   "code": "2E",
+   "name": "Group E 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2I",
+   "name": "Group I 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760492",
+  "utc": "2026-06-30T21:00Z",
+  "home": {
+   "code": "1I",
+   "name": "Group I Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group C/D/F/G/H",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760491",
+  "utc": "2026-07-01T01:00Z",
+  "home": {
+   "code": "1A",
+   "name": "Group A Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group C/E/F/H/I",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "1672",
+  "venue": "Estadio Banorte",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760495",
+  "utc": "2026-07-01T16:00Z",
+  "home": {
+   "code": "1L",
+   "name": "Group L Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group E/H/I/J/K",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760493",
+  "utc": "2026-07-01T20:00Z",
+  "home": {
+   "code": "1G",
+   "name": "Group G Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group A/E/H/I/J",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4485",
+  "venue": "Lumen Field",
+  "city": "Seattle, Washington",
+  "country": "USA",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760494",
+  "utc": "2026-07-02T00:00Z",
+  "home": {
+   "code": "1D",
+   "name": "Group D Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group B/E/F/I/J",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "5960",
+  "venue": "Levi's Stadium",
+  "city": "Santa Clara, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760497",
+  "utc": "2026-07-02T19:00Z",
+  "home": {
+   "code": "1H",
+   "name": "Group H Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2J",
+   "name": "Group J 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760496",
+  "utc": "2026-07-02T23:00Z",
+  "home": {
+   "code": "2K",
+   "name": "Group K 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2L",
+   "name": "Group L 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "10143",
+  "venue": "BMO Field",
+  "city": "Toronto",
+  "country": "Canada",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760498",
+  "utc": "2026-07-03T03:00Z",
+  "home": {
+   "code": "1B",
+   "name": "Group B Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group E/F/G/I/J",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4370",
+  "venue": "BC Place",
+  "city": "Vancouver",
+  "country": "Canada",
+  "broadcast": [
+   "FS1",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760499",
+  "utc": "2026-07-03T18:00Z",
+  "home": {
+   "code": "2D",
+   "name": "Group D 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2G",
+   "name": "Group G 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760500",
+  "utc": "2026-07-03T22:00Z",
+  "home": {
+   "code": "1J",
+   "name": "Group J Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "2H",
+   "name": "Group H 2nd Place",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4643",
+  "venue": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760501",
+  "utc": "2026-07-04T01:30Z",
+  "home": {
+   "code": "1K",
+   "name": "Group K Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "3RD",
+   "name": "Third Place Group D/E/I/J/L",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "10897",
+  "venue": "GEHA Field at Arrowhead Stadium",
+  "city": "Kansas City, Missouri",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 32"
+ },
+ {
+  "id": "760502",
+  "utc": "2026-07-04T17:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 1 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 3 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "6262",
+  "venue": "NRG Stadium",
+  "city": "Houston, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760503",
+  "utc": "2026-07-04T21:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 2 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 5 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "1421",
+  "venue": "Lincoln Financial Field",
+  "city": "Philadelphia, Pennsylvania",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760504",
+  "utc": "2026-07-05T20:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 4 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 6 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760505",
+  "utc": "2026-07-06T00:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 7 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 8 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "1672",
+  "venue": "Estadio Banorte",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760506",
+  "utc": "2026-07-06T19:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 11 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 12 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760507",
+  "utc": "2026-07-07T00:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 9 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 10 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4485",
+  "venue": "Lumen Field",
+  "city": "Seattle, Washington",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760509",
+  "utc": "2026-07-07T16:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 14 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 16 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760508",
+  "utc": "2026-07-07T20:00Z",
+  "home": {
+   "code": "RD32",
+   "name": "Round of 32 13 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD32",
+   "name": "Round of 32 15 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4370",
+  "venue": "BC Place",
+  "city": "Vancouver",
+  "country": "Canada",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Round of 16"
+ },
+ {
+  "id": "760510",
+  "utc": "2026-07-09T20:00Z",
+  "home": {
+   "code": "RD16 W1",
+   "name": "Round of 16 1 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD16 W2",
+   "name": "Round of 16 2 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "10660",
+  "venue": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Quarterfinal"
+ },
+ {
+  "id": "760511",
+  "utc": "2026-07-10T19:00Z",
+  "home": {
+   "code": "RD16 W5",
+   "name": "Round of 16 5 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD16 W6",
+   "name": "Round of 16 6 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "9115",
+  "venue": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Quarterfinal"
+ },
+ {
+  "id": "760512",
+  "utc": "2026-07-11T21:00Z",
+  "home": {
+   "code": "RD16 W3",
+   "name": "Round of 16 3 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD16 W4",
+   "name": "Round of 16 4 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4643",
+  "venue": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Quarterfinal"
+ },
+ {
+  "id": "760513",
+  "utc": "2026-07-12T01:00Z",
+  "home": {
+   "code": "RD16 W7",
+   "name": "Round of 16 7 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "RD16 W8",
+   "name": "Round of 16 8 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "10897",
+  "venue": "GEHA Field at Arrowhead Stadium",
+  "city": "Kansas City, Missouri",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Quarterfinal"
+ },
+ {
+  "id": "760514",
+  "utc": "2026-07-14T19:00Z",
+  "home": {
+   "code": "QFW1",
+   "name": "Quarterfinal 1 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "QFW2",
+   "name": "Quarterfinal 2 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "3871",
+  "venue": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Semifinal"
+ },
+ {
+  "id": "760515",
+  "utc": "2026-07-15T19:00Z",
+  "home": {
+   "code": "QFW3",
+   "name": "Quarterfinal 3 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "QW4",
+   "name": "Quarterfinal 4 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "7485",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Semifinal"
+ },
+ {
+  "id": "760516",
+  "utc": "2026-07-18T21:00Z",
+  "home": {
+   "code": "SF L1",
+   "name": "Semifinal 1 Loser",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "SF L2",
+   "name": "Semifinal 2 Loser",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4643",
+  "venue": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Third Place"
+ },
+ {
+  "id": "760517",
+  "utc": "2026-07-19T19:00Z",
+  "home": {
+   "code": "SFW1",
+   "name": "Semifinal 1 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "away": {
+   "code": "SFW2",
+   "name": "Semifinal 2 Winner",
+   "flag": "",
+   "placeholder": true
+  },
+  "venueId": "4727",
+  "venue": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "country": "USA",
+  "broadcast": [
+   "FOX",
+   "Peacock",
+   "Tele"
+  ],
+  "stage": "knockout",
+  "round": "Final"
+ }
+]

@@ -1,0 +1,68 @@
+import type { Match } from '../lib/types'
+import type { LiveMap } from '../lib/espn'
+import { effectiveTeam, isLive, hasScore } from '../lib/match'
+import { countdown, zoned } from '../lib/time'
+
+interface Props {
+  matches: Match[]
+  live: LiveMap
+  zone: string
+  now: Date
+}
+
+export function LiveTicker({ matches, live, zone, now }: Props) {
+  const liveMatches = matches.filter((m) => isLive(live[m.id]))
+
+  if (liveMatches.length > 0) {
+    return (
+      <div className="ticker ticker--live">
+        <span className="ticker__pill">● LIVE</span>
+        <div className="ticker__track">
+          {liveMatches.map((m) => {
+            const ls = live[m.id]
+            const home = effectiveTeam('home', m, ls)
+            const away = effectiveTeam('away', m, ls)
+            return (
+              <span className="ticker__item" key={m.id}>
+                <b>{home.code}</b>{' '}
+                {hasScore(ls) ? `${ls.homeScore}–${ls.awayScore}` : 'vs'}{' '}
+                <b>{away.code}</b>
+                <em className="ticker__clock">{ls?.clock}</em>
+              </span>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
+  // No live matches — show a countdown to the next kickoff.
+  const next = matches
+    .filter((m) => new Date(m.utc).getTime() > now.getTime())
+    .sort((a, b) => a.utc.localeCompare(b.utc))[0]
+
+  if (!next) {
+    return (
+      <div className="ticker ticker--idle">
+        <span className="ticker__pill ticker__pill--done">🏆 Tournament complete</span>
+      </div>
+    )
+  }
+
+  const home = effectiveTeam('home', next, live[next.id])
+  const away = effectiveTeam('away', next, live[next.id])
+  const t = zoned(next.utc, zone)
+  return (
+    <div className="ticker ticker--next">
+      <span className="ticker__pill ticker__pill--next">NEXT KICKOFF</span>
+      <div className="ticker__track">
+        <span className="ticker__item">
+          <b>{home.name}</b> vs <b>{away.name}</b>
+          <em className="ticker__clock">
+            {t.dayHeading} · {t.time} · {countdown(next.utc, now)}
+          </em>
+        </span>
+      </div>
+    </div>
+  )
+}
