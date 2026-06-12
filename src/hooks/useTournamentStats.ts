@@ -1,18 +1,21 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { fetchSummary, type LiveMap } from '../lib/espn'
-import { aggregateScorers, extractGoals } from '../lib/scorers'
+import { aggregateKeepers, aggregateScorers, extractMatchStats } from '../lib/scorers'
 import { KEYS, load, save } from '../lib/storage'
-import type { Goal } from '../lib/types'
+import type { MatchStats } from '../lib/types'
 
-type Cache = Record<string, Goal[]>
+type Cache = Record<string, MatchStats>
 
-// Builds the Golden Boot leaderboard by fetching each finished match's summary
-// exactly once, caching the extracted goals (tiny) in localStorage. Finished
-// matches never change, so this trickles in and never re-fetches.
-export function useTopScorers(live: LiveMap) {
-  const [cache, setCache] = useState<Cache>(() => load<Cache>(KEYS.goalsCache, {}))
+// Builds tournament award data (Golden Boot scorers + Golden Glove keepers) by
+// fetching each finished match's summary exactly once and caching the extracted
+// stats (tiny) in localStorage. Finished matches never change, so this never
+// re-fetches.
+export function useTournamentStats(live: LiveMap) {
+  const [cache, setCache] = useState<Cache>(() => load<Cache>(KEYS.matchStats, {}))
   const [pending, setPending] = useState(0)
   const processing = useRef<Set<string>>(new Set())
+  const liveRef = useRef(live)
+  liveRef.current = live
 
   const completedIds = useMemo(
     () => Object.keys(live).filter((id) => live[id]?.completed),
@@ -26,20 +29,18 @@ export function useTopScorers(live: LiveMap) {
     missing.forEach((id) => processing.current.add(id))
     setPending((n) => n + missing.length)
 
-    // Fetch sequentially to stay gentle on the unofficial API.
     ;(async () => {
       for (const id of missing) {
         try {
           const summary = await fetchSummary(id)
-          const goals = extractGoals(id, summary)
+          const stats = extractMatchStats(id, summary, liveRef.current[id])
           if (cancelled) return
           setCache((prev) => {
-            const next = { ...prev, [id]: goals }
-            save(KEYS.goalsCache, next)
+            const next = { ...prev, [id]: stats }
+            save(KEYS.matchStats, next)
             return next
           })
         } catch {
-          /* leave it un-cached; we'll retry on a later render */
           processing.current.delete(id)
         } finally {
           if (!cancelled) setPending((n) => Math.max(0, n - 1))
@@ -52,6 +53,9 @@ export function useTopScorers(live: LiveMap) {
     }
   }, [completedIds, cache])
 
-  const scorers = useMemo(() => aggregateScorers(Object.values(cache).flat()), [cache])
-  return { scorers, loading: pending > 0, matchesCounted: Object.keys(cache).length }
+  const all = useMemo(() => Object.values(cache), [cache])
+  const scorers = useMemo(() => aggregateScorers(all.flatMap((m) => m.goals)), [all])
+  const keepers = useMemo(() => aggregateKeepers(all.flatMap((m) => m.keepers)), [all])
+
+  return { scorers, keepers, loading: pending > 0, matchesCounted: all.length }
 }

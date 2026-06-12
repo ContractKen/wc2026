@@ -24,6 +24,7 @@ export const KEYS = {
   region: 'wc2026.region',
   installHint: 'wc2026.installHintDismissed',
   goalsCache: 'wc2026.goalsCache',
+  matchStats: 'wc2026.matchStats',
   predictions: 'wc2026.predictions',
   theme: 'wc2026.theme',
   onboarded: 'wc2026.onboarded',

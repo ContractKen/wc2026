@@ -16,7 +16,7 @@ import { useTimezone } from './hooks/useTimezone'
 import { useFavorites } from './hooks/useFavorites'
 import { useFollowedPlayers } from './hooks/useFollowedPlayers'
 import { useLiveScores } from './hooks/useLiveScores'
-import { useTopScorers } from './hooks/useTopScorers'
+import { useTournamentStats } from './hooks/useTournamentStats'
 import { useAlerts } from './hooks/useAlerts'
 import { isLive } from './lib/match'
 import { KEYS, load, save } from './lib/storage'
@@ -60,7 +60,7 @@ export default function App() {
   const { favorites, isFavorite, toggle, setMany, count } = useFavorites()
   const followed = useFollowedPlayers()
   const { live, status, updatedAt } = useLiveScores()
-  const { scorers, loading: scorersLoading, matchesCounted } = useTopScorers(live)
+  const { scorers, keepers, loading: statsLoading, matchesCounted } = useTournamentStats(live)
   const now = useNow()
   const { canInstall, install } = useInstallPrompt()
 
@@ -162,7 +162,7 @@ export default function App() {
         )}
         {tab === 'bracket' && <BracketView matches={MATCHES} live={live} zone={zone} />}
         {tab === 'stats' && (
-          <StatsView scorers={scorers} scorersLoading={scorersLoading} matchesCounted={matchesCounted} />
+          <StatsView scorers={scorers} keepers={keepers} loading={statsLoading} matchesCounted={matchesCounted} />
         )}
         {tab === 'favorites' && (
           <FavoritesView

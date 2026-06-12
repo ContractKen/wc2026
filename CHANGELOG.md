@@ -3,6 +3,17 @@
 All notable changes to the World Cup 2026 Tracker. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); dates are 2026.
 
+## [1.4.1] — 2026-06-12 — Stats tab + all four FIFA awards
+
+### Added
+- Tournament stats moved out of Groups into their own **Stats** tab.
+- All **four individual FIFA awards** as live cards:
+  - **🏆 Golden Ball** — goal-involvement (G+A) leaders as a live indicator (official award is a media vote).
+  - **🥇 Golden Boot** — top scorers (goals, then assists).
+  - **🧤 Golden Glove** — goalkeepers ranked by clean sheets → fewest conceded → saves, computed from the same cached match data (no extra fetches).
+  - **🌟 Best Young Player** — explained with an honest note (subjective vote, announced after the final).
+- Each award clearly labels statistical vs. officially-decided, and players are tappable for their profile.
+
 ## [1.4.0] — 2026-06-12 — Daily-use depth (Batch 1 of 3)
 
 ### Added

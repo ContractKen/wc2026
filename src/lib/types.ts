@@ -77,6 +77,30 @@ export interface ScorerRow {
   assists: number
 }
 
+export interface KeeperLine {
+  id: string
+  name: string
+  team: string
+  conceded: number
+  saves: number
+  cleanSheet: boolean
+}
+
+export interface KeeperRow {
+  id: string
+  name: string
+  team: string
+  matches: number
+  cleanSheets: number
+  conceded: number
+  saves: number
+}
+
+export interface MatchStats {
+  goals: Goal[]
+  keepers: KeeperLine[]
+}
+
 export interface CommentaryItem {
   sequence: number
   clock: string
