@@ -3,6 +3,18 @@
 All notable changes to the World Cup 2026 Tracker. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); dates are 2026.
 
+## [1.6.0] — 2026-06-12 — Background push (Batch 3 of 3)
+
+### Added
+- **Background push notifications** — goal / kick-off / full-time alerts that arrive even when the app is fully closed.
+  - Service worker `push` + `notificationclick` handlers (notification deep-links to the match).
+  - Client subscribe/unsubscribe flow and a **"📲 Background alerts"** toggle in *My Teams* (hidden until configured).
+  - A small **Cloudflare Worker** (`worker/`) that stores subscriptions in KV and, on a 1-minute cron, polls ESPN, detects events, and sends Web Push (VAPID). Free tier; full setup in `worker/README.md`.
+- Respects the existing 🔔 Alerts scope (your teams vs all matches).
+
+### Setup required
+- Background push needs a one-time deploy of the Worker (free Cloudflare account) and two values pasted into `src/config.ts`. Until then the toggle stays hidden and nothing else changes. See `worker/README.md`.
+
 ## [1.5.0] — 2026-06-12 — New look + personality (Batch 2 of 3)
 
 ### Added

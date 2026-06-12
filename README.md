@@ -31,6 +31,9 @@ shown in **your** time zone with a friendly part-of-day label.
 - **Shareable links** — the *Share* button copies a deep link that opens that match; tabs are in the URL too.
 - **Where to watch** — pick your region (IN/UK/US/CA/AU) for official broadcaster **links** with **Free / Subscription** and **4K-UHD** badges (e.g. BBC iPlayer in the UK). US listings narrow to the channels carrying that specific match. Only legitimate rights-holders — no pirate streams; availability/4K for 2026 is indicative and easy to edit in `src/data/broadcasts.ts`.
 - **Accessibility** — ARIA live region for live updates, keyboard-friendly, honors reduced-motion.
+- **Stats tab** — all four FIFA awards (Golden Ball / Boot / Glove / Best Young Player) as live indicators; tap any player for a profile card.
+- **Themes & personality** — light/dark toggle, favorite-team accent colour, first-run onboarding, and a solo **predictions** game (predict scorelines, auto-graded).
+- **Background push** *(optional, needs a free Cloudflare Worker — see [`worker/README.md`](worker/README.md))* — goal/kickoff/full-time alerts even when the app is closed.
 
 ## Run it
 

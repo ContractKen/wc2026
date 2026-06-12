@@ -4,6 +4,7 @@ import type { LiveMap } from '../lib/espn'
 import { MatchCard, type MatchCardCommon } from './MatchCard'
 import { CountryPicker } from './CountryPicker'
 import { SquadPicker } from './SquadPicker'
+import { PushSettings } from './PushSettings'
 import { involves } from '../lib/match'
 import { zoned } from '../lib/time'
 import { downloadICS, matchesToICS } from '../lib/ics'
@@ -31,9 +32,10 @@ interface Props {
   players: FollowedPlayer[]
   card: MatchCardCommon
   predSummary: PredSummary
+  alertScope: 'off' | 'my' | 'all'
 }
 
-export function FavoritesView({ matches, live, zone, favorites, setMany, players, card, predSummary }: Props) {
+export function FavoritesView({ matches, live, zone, favorites, setMany, players, card, predSummary, alertScope }: Props) {
   const { isFav, toggleFav, isFollowed, toggleFollow } = card
   const [pickerOpen, setPickerOpen] = useState(favorites.size === 0)
   const [alarms, setAlarms] = useState<number[]>([1440, 60])
@@ -78,6 +80,8 @@ export function FavoritesView({ matches, live, zone, favorites, setMany, players
 
   return (
     <div className="favorites">
+      <PushSettings scope={alertScope === 'all' ? 'all' : 'my'} teams={[...favorites]} />
+
       {predSummary.total > 0 && (
         <div className="pred-summary">
           <h3 className="pred-summary__title">🔮 Your predictions</h3>

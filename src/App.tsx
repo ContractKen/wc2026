@@ -218,6 +218,7 @@ export default function App() {
             players={followed.players}
             card={card}
             predSummary={predSummary}
+            alertScope={alertScope}
           />
         )}
       </main>
