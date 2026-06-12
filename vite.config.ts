@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // https://vite.dev/config/
 // - base './' on build → relative asset paths so the bundle works at any
 //   sub-path (e.g. GitHub Pages' https://user.github.io/<repo>/).
@@ -8,7 +10,7 @@ import react from '@vitejs/plugin-react'
 //   In production the app calls ESPN directly (it returns permissive CORS).
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? './' : '/',
-  plugins: [react()],
+  plugins: [react(), cloudflare()],
   server: {
     proxy: {
       '/espn-web': {
