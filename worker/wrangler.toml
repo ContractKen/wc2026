@@ -10,16 +10,16 @@ crons = ["* * * * *"]
 # Create these two KV namespaces and paste their ids (see README step 3).
 [[kv_namespaces]]
 binding = "SUBS"
-id = "REPLACE_WITH_SUBS_KV_ID"
+id = "52ca9d6fad574bb588b66a28f882d483"
 
 [[kv_namespaces]]
 binding = "STATE"
-id = "REPLACE_WITH_STATE_KV_ID"
+id = "2dbb638033084e309d44184bdb2685ee"
 
 [vars]
 ALLOWED_ORIGIN = "https://contractken.github.io"
 SITE_URL = "https://contractken.github.io/wc2026/"
 VAPID_SUBJECT = "mailto:amit@contractken.com"
 # Paste the PUBLIC VAPID key here (same one you put in src/config.ts).
-VAPID_PUBLIC_KEY = "REPLACE_WITH_VAPID_PUBLIC_KEY"
+VAPID_PUBLIC_KEY = "BL3128TW_NrZvU98hA8LVIYH3dzgyJrx6Rn6wJeeDwacv7FYm28FZfvKrk1CBDXk7Tsyv7CtL_2s5AHGeRo_fuY"
 # VAPID_PRIVATE_KEY is set as a secret, NOT here: `wrangler secret put VAPID_PRIVATE_KEY`

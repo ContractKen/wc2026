@@ -10,7 +10,9 @@
       "Bash(git push *)",
       "Bash(curl -s \"https://api.github.com/repos/ContractKen/wc2026/actions/runs?per_page=1\")",
       "Bash(curl -s \"https://contractken.github.io/wc2026/\")",
-      "Bash(grep -E '\\\\.js$')"
+      "Bash(grep -E '\\\\.js$')",
+      "Bash(curl -s \"https://wc2026-push.amit78.workers.dev/health\")",
+      "Bash(curl -s -o /dev/null -w \"OPTIONS /subscribe -> %{http_code}\\\\n\" -X OPTIONS -H \"Origin: https://contractken.github.io\" \"https://wc2026-push.amit78.workers.dev/subscribe\")"
     ]
   }
 }
