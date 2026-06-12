@@ -8,6 +8,7 @@ import { involves } from '../lib/match'
 import { zoned } from '../lib/time'
 import { downloadICS, matchesToICS } from '../lib/ics'
 import { sortByRank } from '../data/countryRank'
+import type { PredSummary } from '../lib/predictions'
 import teamsData from '../data/teams.json'
 
 const TEAMS = teamsData as Team[]
@@ -29,9 +30,10 @@ interface Props {
   setMany: (codes: string[], selected: boolean) => void
   players: FollowedPlayer[]
   card: MatchCardCommon
+  predSummary: PredSummary
 }
 
-export function FavoritesView({ matches, live, zone, favorites, setMany, players, card }: Props) {
+export function FavoritesView({ matches, live, zone, favorites, setMany, players, card, predSummary }: Props) {
   const { isFav, toggleFav, isFollowed, toggleFollow } = card
   const [pickerOpen, setPickerOpen] = useState(favorites.size === 0)
   const [alarms, setAlarms] = useState<number[]>([1440, 60])
@@ -76,6 +78,23 @@ export function FavoritesView({ matches, live, zone, favorites, setMany, players
 
   return (
     <div className="favorites">
+      {predSummary.total > 0 && (
+        <div className="pred-summary">
+          <h3 className="pred-summary__title">🔮 Your predictions</h3>
+          <div className="pred-summary__stats">
+            <div className="pred-stat"><b>{predSummary.points}</b><span>Points</span></div>
+            <div className="pred-stat"><b>{predSummary.exact}</b><span>Exact</span></div>
+            <div className="pred-stat"><b>{predSummary.result}</b><span>Right result</span></div>
+            <div className="pred-stat">
+              <b>{predSummary.graded ? Math.round(((predSummary.exact + predSummary.result) / predSummary.graded) * 100) : 0}%</b>
+              <span>Accuracy</span>
+            </div>
+            <div className="pred-stat"><b>{predSummary.total}</b><span>Predicted</span></div>
+          </div>
+          <p className="pred-summary__note">Predict scorelines on upcoming matches (Schedule tab). Exact score = 3 pts, right result = 1 pt.</p>
+        </div>
+      )}
+
       <div className="fav-toolbar">
         <div className="fav-teams">
           {favTeams.length === 0 ? (

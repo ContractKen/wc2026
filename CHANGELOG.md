@@ -3,6 +3,15 @@
 All notable changes to the World Cup 2026 Tracker. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); dates are 2026.
 
+## [1.5.0] — 2026-06-12 — New look + personality (Batch 2 of 3)
+
+### Added
+- **Bold new visual identity** — a deep-plum "Americas 2026" palette with magenta/gold/mint accents, layered glow background, dot texture, and an original hand-drawn confetti hero (no copyrighted photos/branding).
+- **Light & dark themes** — toggle in the header; preference saved.
+- **Favorite-team accent** — the app tints to your top-followed team's colour (e.g. Argentina sky-blue).
+- **First-run onboarding** — a welcome flow to pick teams, time zone, region, and alerts in one screen (returning users are skipped).
+- **Predictions game (solo)** — predict scorelines on upcoming matches; auto-graded when they finish (exact = 3 pts, right result = 1 pt) with an accuracy/points summary in My Teams.
+
 ## [1.4.1] — 2026-06-12 — Stats tab + all four FIFA awards
 
 ### Added

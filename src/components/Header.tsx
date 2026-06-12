@@ -13,6 +13,8 @@ interface Props {
   onAlertScopeChange: (s: AlertScope) => void
   canInstall: boolean
   onInstall: () => void
+  theme: 'dark' | 'light'
+  onToggleTheme: () => void
   status: ConnStatus
   updatedAt: number | null
 }
@@ -28,7 +30,7 @@ function statusText(status: ConnStatus, updatedAt: number | null): string {
 
 export function Header({
   tzId, onTzChange, region, onRegionChange, alertScope, onAlertScopeChange,
-  canInstall, onInstall, status, updatedAt,
+  canInstall, onInstall, theme, onToggleTheme, status, updatedAt,
 }: Props) {
   return (
     <header className="header">
@@ -43,6 +45,14 @@ export function Header({
         <span className={`conn conn--${status}`} role="status" aria-live="polite">
           <span className="conn__dot" /> {statusText(status, updatedAt)}
         </span>
+        <button
+          className="icon-btn"
+          onClick={onToggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          title="Toggle theme"
+        >
+          {theme === 'dark' ? '☀️' : '🌙'}
+        </button>
         {canInstall && (
           <button className="btn btn--sm install-btn" onClick={onInstall}>⬇ Install</button>
         )}

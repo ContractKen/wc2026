@@ -6,6 +6,7 @@ import { VENUES } from '../data/venues'
 import { MatchDetail } from './MatchDetail'
 import { watchOptions, type Region } from '../data/broadcasts'
 import { shareUrl } from '../lib/url'
+import { gradePrediction, type Prediction } from '../lib/predictions'
 
 // Shared per-card handlers/state, bundled so views can forward them in one prop.
 export interface MatchCardCommon {
@@ -15,6 +16,8 @@ export interface MatchCardCommon {
   isFollowed: (id: string) => boolean
   toggleFollow: (p: FollowedPlayer) => void
   followedNames: Set<string>
+  getPrediction: (matchId: string) => Prediction | undefined
+  setPrediction: (matchId: string, home: number, away: number) => void
 }
 
 type Props = MatchCardCommon & {
@@ -32,12 +35,22 @@ function Flag({ team }: { team: TeamRef }) {
 }
 
 export function MatchCard({
-  match, live, zone, region, isFav, toggleFav, isFollowed, toggleFollow, followedNames, highlight,
+  match, live, zone, region, isFav, toggleFav, isFollowed, toggleFollow, followedNames,
+  getPrediction, setPrediction, highlight,
 }: Props) {
   const [open, setOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(!!highlight)
   const [copied, setCopied] = useState(false)
   const ref = useRef<HTMLElement>(null)
+
+  const pred = getPrediction(match.id)
+  const [ph, setPh] = useState(pred?.home != null ? String(pred.home) : '')
+  const [pa, setPa] = useState(pred?.away != null ? String(pred.away) : '')
+  function savePred(h: string, a: string) {
+    setPh(h); setPa(a)
+    const hn = parseInt(h, 10), an = parseInt(a, 10)
+    if (hn >= 0 && an >= 0 && hn <= 20 && an <= 20) setPrediction(match.id, hn, an)
+  }
 
   const live_ = isLive(live)
   const hasDetail = live_ || isFinal(live)
@@ -51,6 +64,8 @@ export function MatchCard({
   const favAway = isFav(away.code)
   const tag = match.stage === 'group' ? `Group ${match.group} · MD${match.matchday}` : match.round
   const watch = watchOptions(region, match.broadcast)
+  const canPredict = status.kind === 'scheduled' && !home.placeholder && !away.placeholder
+  const predResult = pred ? gradePrediction(pred, live) : null
   const mapsUrl = venue
     ? `https://www.google.com/maps/search/${encodeURIComponent(`${venue.name} ${venue.city}`)}`
     : ''
@@ -153,6 +168,26 @@ export function MatchCard({
           ))}
         </span>
       </div>
+
+      {canPredict && (
+        <div className="predict">
+          <span className="predict__label">🔮 Predict</span>
+          <span className="predict__code">{home.code}</span>
+          <input className="predict__in" type="number" min="0" max="20" inputMode="numeric"
+            value={ph} onChange={(e) => savePred(e.target.value, pa)} aria-label={`${home.name} score`} />
+          <span className="predict__dash">–</span>
+          <input className="predict__in" type="number" min="0" max="20" inputMode="numeric"
+            value={pa} onChange={(e) => savePred(ph, e.target.value)} aria-label={`${away.name} score`} />
+          <span className="predict__code">{away.code}</span>
+          {pred && <span className="predict__saved">saved ✓</span>}
+        </div>
+      )}
+      {pred && predResult && (
+        <div className={`predict-result predict-result--${predResult}`}>
+          🔮 You predicted {pred.home}–{pred.away} ·{' '}
+          {predResult === 'exact' ? 'Exact score! +3' : predResult === 'result' ? 'Right result +1' : 'Missed'}
+        </div>
+      )}
 
       {open && venue && (
         <div className="venue-tidbit">
