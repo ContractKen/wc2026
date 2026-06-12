@@ -17,8 +17,9 @@ binding = "STATE"
 id = "2dbb638033084e309d44184bdb2685ee"
 
 [vars]
-ALLOWED_ORIGIN = "https://contractken.github.io"
-SITE_URL = "https://contractken.github.io/wc2026/"
+# "*" so subscribe works from any origin (both the pages.dev and github.io builds).
+ALLOWED_ORIGIN = "*"
+SITE_URL = "https://worldcup26app.pages.dev/"
 VAPID_SUBJECT = "mailto:amit@contractken.com"
 # Paste the PUBLIC VAPID key here (same one you put in src/config.ts).
 VAPID_PUBLIC_KEY = "BL3128TW_NrZvU98hA8LVIYH3dzgyJrx6Rn6wJeeDwacv7FYm28FZfvKrk1CBDXk7Tsyv7CtL_2s5AHGeRo_fuY"
