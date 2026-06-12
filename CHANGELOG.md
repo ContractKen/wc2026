@@ -3,6 +3,16 @@
 All notable changes to the World Cup 2026 Tracker. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); dates are 2026.
 
+## [1.3.0] — 2026-06-12 — Official "Watch" links
+
+### Added
+- **Where to watch** now shows official broadcaster **links** per region with **Free / Subscription** and **4K-UHD** badges. Prioritised for India, UK, and US:
+  - **UK** — BBC iPlayer (free, select matches in 4K UHD) and ITVX (free).
+  - **US** — FOX/FS1 and Telemundo (free over-the-air) and Peacock (subscription); the list narrows to the channels ESPN says carry each specific match.
+  - **India** — JioHotstar and Star Sports (2026 rights being confirmed).
+  - Plus Canada and Australia free-to-air options.
+- Only legitimate rights-holders are linked (no unauthorized streams). Availability and 4K for 2026 are indicative and editable in `src/data/broadcasts.ts`.
+
 ## [1.2.0] — 2026-06-08 — Depth, format & platform
 
 ### Added

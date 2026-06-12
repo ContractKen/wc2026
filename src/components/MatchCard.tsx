@@ -4,7 +4,7 @@ import { effectiveTeam, hasScore, isFinal, isLive, matchStatus } from '../lib/ma
 import { zoned } from '../lib/time'
 import { VENUES } from '../data/venues'
 import { MatchDetail } from './MatchDetail'
-import { BROADCASTERS, type Region } from '../data/broadcasts'
+import { watchOptions, type Region } from '../data/broadcasts'
 import { shareUrl } from '../lib/url'
 
 // Shared per-card handlers/state, bundled so views can forward them in one prop.
@@ -31,12 +31,6 @@ function Flag({ team }: { team: TeamRef }) {
   return <img className="flag" src={team.flag} alt="" loading="lazy" />
 }
 
-function watchOn(match: Match, region: Region): string[] {
-  // US match listings come from ESPN; other regions use the rights-holder map.
-  if (region === 'US') return match.broadcast.length ? match.broadcast : BROADCASTERS.US
-  return BROADCASTERS[region]
-}
-
 export function MatchCard({
   match, live, zone, region, isFav, toggleFav, isFollowed, toggleFollow, followedNames, highlight,
 }: Props) {
@@ -56,7 +50,7 @@ export function MatchCard({
   const favHome = isFav(home.code)
   const favAway = isFav(away.code)
   const tag = match.stage === 'group' ? `Group ${match.group} · MD${match.matchday}` : match.round
-  const watch = watchOn(match, region)
+  const watch = watchOptions(region, match.broadcast)
   const mapsUrl = venue
     ? `https://www.google.com/maps/search/${encodeURIComponent(`${venue.name} ${venue.city}`)}`
     : ''
@@ -140,7 +134,24 @@ export function MatchCard({
         <button className="venue-link" onClick={share} aria-label="Copy share link">
           {copied ? '✓ Copied' : '🔗 Share'}
         </button>
-        <span className="broadcast" title="Where to watch">📺 {watch.join(', ')}</span>
+        <span className="watch" title="Official broadcasters — availability/4K indicative for 2026">
+          📺
+          {watch.map((b) => (
+            <a
+              key={b.name}
+              className="watch__link"
+              href={b.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={b.note || b.name}
+            >
+              {b.name}
+              {b.free && <span className="wbadge wbadge--free">FREE</span>}
+              {b.uhd && <span className="wbadge wbadge--uhd">4K</span>}
+              {!b.free && <span className="wbadge wbadge--sub">$</span>}
+            </a>
+          ))}
+        </span>
       </div>
 
       {open && venue && (

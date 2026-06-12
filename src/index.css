@@ -383,6 +383,15 @@ h1, h2, h3 { margin: 0; }
 .venue-map:hover { text-decoration: underline; }
 .match--hl { outline: 2px solid var(--accent-2); outline-offset: 2px; }
 
+/* ---------- Where to watch ---------- */
+.watch { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-left: auto; font-size: 11px; color: var(--faint); }
+.watch__link { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); text-decoration: none; background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; }
+.watch__link:hover { border-color: var(--accent-2); color: var(--text); }
+.wbadge { font-size: 9px; font-weight: 800; letter-spacing: 0.03em; padding: 1px 5px; border-radius: 999px; line-height: 1.4; }
+.wbadge--free { background: rgba(0,210,122,0.18); color: var(--accent); }
+.wbadge--uhd { background: rgba(255,203,69,0.2); color: var(--gold); }
+.wbadge--sub { background: var(--card); color: var(--faint); }
+
 /* ---------- Match detail (tabs) ---------- */
 .mdetail { grid-column: 1 / -1; background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-top: 4px; }
 .mdetail__tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
@@ -481,6 +490,7 @@ h1, h2, h3 { margin: 0; }
   .team__name { font-size: 14px; white-space: normal; }
   .score { font-size: 20px; }
   .broadcast { margin-left: 0; }
+  .watch { margin-left: 0; }
   .filters { flex-direction: column; }
   .filters__selects { width: 100%; }
   .filters__selects select, .filters__selects input { flex: 1; }

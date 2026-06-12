@@ -29,7 +29,7 @@ shown in **your** time zone with a friendly part-of-day label.
 - **Live alerts** (foreground) — opt in (My teams / All) for goal, kickoff, and full-time browser notifications.
 - **Installable PWA + offline** — add to home screen; the shell + schedule work offline.
 - **Shareable links** — the *Share* button copies a deep link that opens that match; tabs are in the URL too.
-- **Localized "where to watch"** — pick your region (US/UK/IN/CA/AU) for the right broadcaster.
+- **Where to watch** — pick your region (IN/UK/US/CA/AU) for official broadcaster **links** with **Free / Subscription** and **4K-UHD** badges (e.g. BBC iPlayer in the UK). US listings narrow to the channels carrying that specific match. Only legitimate rights-holders — no pirate streams; availability/4K for 2026 is indicative and easy to edit in `src/data/broadcasts.ts`.
 - **Accessibility** — ARIA live region for live updates, keyboard-friendly, honors reduced-motion.
 
 ## Run it
