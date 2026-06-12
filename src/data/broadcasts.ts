@@ -26,13 +26,19 @@ export const REGIONS: { id: Region; label: string }[] = [
 export const BROADCASTERS: Record<Region, Broadcaster[]> = {
   IN: [
     {
-      name: 'JioHotstar',
-      url: 'https://www.hotstar.com/in',
+      name: 'ZEE5',
+      url: 'https://www.zee5.com/',
       free: false,
       uhd: false,
-      note: 'Streaming — subscription (2026 rights being confirmed)',
+      note: 'Main broadcaster — streaming (subscription)',
     },
-    { name: 'Star Sports', url: 'https://www.starsports.com/', free: false, uhd: false, note: 'TV (cable/DTH)' },
+    {
+      name: 'Unite8 HD',
+      url: 'https://www.tataplay.com/',
+      free: false,
+      uhd: false,
+      note: 'TV channel on Tata Play (DTH)',
+    },
   ],
   UK: [
     {
