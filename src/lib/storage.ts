@@ -23,4 +23,8 @@ export const KEYS = {
   alertScope: 'wc2026.alertScope',
   region: 'wc2026.region',
   installHint: 'wc2026.installHintDismissed',
+  goalsCache: 'wc2026.goalsCache',
+  predictions: 'wc2026.predictions',
+  theme: 'wc2026.theme',
+  onboarded: 'wc2026.onboarded',
 } as const

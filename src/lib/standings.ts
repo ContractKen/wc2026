@@ -116,6 +116,32 @@ export function computeStandings(
   return Object.fromEntries(Object.keys(out).sort().map((k) => [k, out[k]])) as Record<string, Row[]>
 }
 
+export type QualStatus = 'advanced' | 'thirdRace' | 'eliminated' | 'contention'
+
+// Conservative qualification status — only declares a guaranteed outcome.
+// 'advanced' = clinched a top-2 spot; 'thirdRace' = can't make top 2 but still
+// alive via the best-third route; 'eliminated' = group done and out (4th).
+export function computeQualification(standings: Record<string, Row[]>): Record<string, QualStatus> {
+  const out: Record<string, QualStatus> = {}
+  for (const rows of Object.values(standings)) {
+    const complete = rows.length > 0 && rows.every((r) => r.played === 3)
+    rows.forEach((row, i) => {
+      if (complete) {
+        out[row.team.code] = i < 2 ? 'advanced' : i === 3 ? 'eliminated' : 'thirdRace'
+        return
+      }
+      const maxPts = row.points + 3 * (3 - row.played)
+      const reachOrPass = rows.filter(
+        (o) => o !== row && o.points + 3 * (3 - o.played) >= row.points,
+      ).length
+      const strictlyAbove = rows.filter((o) => o !== row && o.points > maxPts).length
+      out[row.team.code] =
+        reachOrPass <= 1 ? 'advanced' : strictlyAbove >= 2 ? 'thirdRace' : 'contention'
+    })
+  }
+  return out
+}
+
 export interface ThirdRow {
   group: string
   row: Row

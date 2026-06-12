@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { FollowedPlayer, SquadPlayer, Team } from '../lib/types'
 import { fetchSquad } from '../lib/espn'
 import { sortByRank } from '../data/countryRank'
+import { usePlayerModal } from './PlayerModal'
 
 interface Props {
   teams: Team[]
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export function SquadPicker({ teams, isFollowed, toggleFollow }: Props) {
+  const { openPlayer } = usePlayerModal()
   const sorted = sortByRank(teams)
   const [code, setCode] = useState<string>('')
   const [squad, setSquad] = useState<SquadPlayer[]>([])
@@ -59,16 +61,20 @@ export function SquadPicker({ teams, isFollowed, toggleFollow }: Props) {
       {squad.length > 0 && team && (
         <div className="squad__grid">
           {squad.map((p) => (
-            <button
-              key={p.id}
-              className={`squad__player ${isFollowed(p.id) ? 'squad__player--on' : ''}`}
-              onClick={() => toggleFollow({ id: p.id, name: p.name, teamCode: team.code })}
-            >
-              <span className="squad__star">{isFollowed(p.id) ? '★' : '☆'}</span>
+            <div key={p.id} className={`squad__player ${isFollowed(p.id) ? 'squad__player--on' : ''}`}>
+              <button
+                className="squad__star"
+                onClick={() => toggleFollow({ id: p.id, name: p.name, teamCode: team.code })}
+                aria-label={`${isFollowed(p.id) ? 'Unfollow' : 'Follow'} ${p.name}`}
+              >
+                {isFollowed(p.id) ? '★' : '☆'}
+              </button>
               <span className="squad__num">{p.jersey}</span>
-              <span className="squad__name">{p.name}</span>
+              <button className="squad__name linklike" onClick={() => openPlayer({ id: p.id, name: p.name, teamCode: team.code })}>
+                {p.name}
+              </button>
               <span className="squad__pos">{p.pos}</span>
-            </button>
+            </div>
           ))}
         </div>
       )}

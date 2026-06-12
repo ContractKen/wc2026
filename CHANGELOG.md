@@ -3,6 +3,17 @@
 All notable changes to the World Cup 2026 Tracker. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); dates are 2026.
 
+## [1.4.0] — 2026-06-12 — Daily-use depth (Batch 1 of 3)
+
+### Added
+- **Live-events strip** in the ticker — recent goals/red cards across all in-play matches, newest first, refreshing every ~20s.
+- **Golden Boot / top-scorers leaderboard** (Groups tab) — built by reading each finished match once and caching the goals locally; goals + assists, tap a name for the player card.
+- **Player profiles** — tap any player (lineups, squad, scorers) for a card with position, age, club, tournament goals/assists, a follow button, and an ESPN link.
+- **Qualification status** in group tables — guaranteed-only badges: ✓ through, "3rd?" best-third race, ✗ eliminated (conservative math, never shows a false result).
+
+### Notes
+- Part 1 of a 3-batch push (daily depth → personality/stickiness → background push).
+
 ## [1.3.1] — 2026-06-12 — Installable-app polish
 
 ### Added

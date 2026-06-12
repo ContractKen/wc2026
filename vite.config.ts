@@ -11,6 +11,11 @@ export default defineConfig(({ command }) => ({
   plugins: [react()],
   server: {
     proxy: {
+      '/espn-web': {
+        target: 'https://site.web.api.espn.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/espn-web/, ''),
+      },
       '/espn': {
         target: 'https://site.api.espn.com',
         changeOrigin: true,

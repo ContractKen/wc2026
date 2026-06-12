@@ -1,21 +1,33 @@
 import { useMemo } from 'react'
-import type { Match, Team } from '../lib/types'
+import type { Match, ScorerRow, Team } from '../lib/types'
 import type { LiveMap } from '../lib/espn'
-import { computeBestThirds, computeStandings } from '../lib/standings'
+import { computeBestThirds, computeQualification, computeStandings, type QualStatus } from '../lib/standings'
+import { TopScorers } from './TopScorers'
 import teamsData from '../data/teams.json'
 
 const TEAMS = teamsData as Team[]
+
+const QUAL_BADGE: Record<QualStatus, { txt: string; cls: string; title: string } | null> = {
+  advanced: { txt: '✓', cls: 'q-adv', title: 'Through to the knockouts' },
+  thirdRace: { txt: '3rd?', cls: 'q-third', title: 'Out of top 2 — alive via best-third race' },
+  eliminated: { txt: '✗', cls: 'q-out', title: 'Eliminated' },
+  contention: null,
+}
 
 interface Props {
   matches: Match[]
   live: LiveMap
   isFav: (code: string) => boolean
   toggleFav: (code: string) => void
+  scorers: ScorerRow[]
+  scorersLoading: boolean
+  matchesCounted: number
 }
 
-export function GroupsView({ matches, live, isFav, toggleFav }: Props) {
+export function GroupsView({ matches, live, isFav, toggleFav, scorers, scorersLoading, matchesCounted }: Props) {
   const tables = useMemo(() => computeStandings(matches, TEAMS, live), [matches, live])
   const thirds = useMemo(() => computeBestThirds(tables), [tables])
+  const qual = useMemo(() => computeQualification(tables), [tables])
   const anyPlayed = useMemo(() => Object.values(tables).some((rows) => rows.some((r) => r.played > 0)), [tables])
 
   return (
@@ -53,6 +65,14 @@ export function GroupsView({ matches, live, isFav, toggleFav }: Props) {
                       </button>
                       <img className="flag flag--sm" src={r.team.flag} alt="" loading="lazy" />
                       <span>{r.team.name}</span>
+                      {QUAL_BADGE[qual[r.team.code]] && (
+                        <span
+                          className={`qbadge ${QUAL_BADGE[qual[r.team.code]]!.cls}`}
+                          title={QUAL_BADGE[qual[r.team.code]]!.title}
+                        >
+                          {QUAL_BADGE[qual[r.team.code]]!.txt}
+                        </span>
+                      )}
                     </td>
                     <td>{r.played}</td>
                     <td>{r.win}</td>
@@ -110,6 +130,8 @@ export function GroupsView({ matches, live, isFav, toggleFav }: Props) {
           </table>
         </section>
       )}
+
+      <TopScorers scorers={scorers} loading={scorersLoading} matchesCounted={matchesCounted} />
     </div>
   )
 }

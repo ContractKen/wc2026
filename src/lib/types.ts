@@ -55,6 +55,26 @@ export interface MatchEvent {
   period: number
   scoringPlay: boolean
   team: string // team display name, if any
+  scorer?: { id: string; name: string }
+  assist?: { id: string; name: string }
+}
+
+export interface Goal {
+  matchId: string
+  scorerId: string
+  scorerName: string
+  team: string
+  assistName?: string
+  ownGoal: boolean
+  penalty: boolean
+}
+
+export interface ScorerRow {
+  id: string
+  name: string
+  team: string
+  goals: number
+  assists: number
 }
 
 export interface CommentaryItem {
@@ -118,6 +138,17 @@ export interface FollowedPlayer {
   id: string
   name: string
   teamCode: string
+}
+
+export interface AthleteProfile {
+  id: string
+  name: string
+  position: string
+  age?: number
+  jersey?: string
+  club?: string
+  headshot?: string
+  link?: string
 }
 
 export interface Venue {

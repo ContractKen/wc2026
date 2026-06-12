@@ -1,4 +1,5 @@
 import type {
+  AthleteProfile,
   CommentaryItem,
   H2HGame,
   Lineup,
@@ -15,6 +16,11 @@ import type {
 const BASE = import.meta.env.DEV
   ? '/espn'
   : 'https://site.api.espn.com'
+
+// Athlete profiles live on a different ESPN host.
+const WEB_BASE = import.meta.env.DEV
+  ? '/espn-web'
+  : 'https://site.web.api.espn.com'
 
 const SCOREBOARD = `${BASE}/apis/site/v2/sports/soccer/fifa.world/scoreboard`
 const SUMMARY = `${BASE}/apis/site/v2/sports/soccer/fifa.world/summary`
@@ -116,6 +122,7 @@ interface RawKeyEvent {
   period?: { number?: number }
   scoringPlay?: boolean
   team?: { displayName?: string }
+  participants?: Array<{ athlete?: { id?: string; displayName?: string } }>
 }
 
 interface RawCommentary {
@@ -217,6 +224,9 @@ export async function fetchSummary(eventId: string): Promise<MatchSummary> {
 
   const events: MatchEvent[] = (data.keyEvents || []).map((e, i) => {
     const typeText = e.type?.text || ''
+    const parts = e.participants || []
+    const scorer = parts[0]?.athlete
+    const assist = parts[1]?.athlete
     return {
       id: e.id || String(i),
       typeText,
@@ -226,6 +236,8 @@ export async function fetchSummary(eventId: string): Promise<MatchSummary> {
       period: e.period?.number || 0,
       scoringPlay: !!e.scoringPlay,
       team: e.team?.displayName || '',
+      scorer: scorer?.id ? { id: scorer.id, name: scorer.displayName || '' } : undefined,
+      assist: assist?.id ? { id: assist.id, name: assist.displayName || '' } : undefined,
     }
   })
 
@@ -275,6 +287,37 @@ export async function fetchSquad(teamId: string): Promise<SquadPlayer[]> {
       pos: p.position?.abbreviation || '',
       jersey: p.jersey || '',
     }))
+}
+
+// A single player's profile (name, position, age, club).
+export async function fetchAthlete(id: string): Promise<AthleteProfile> {
+  const res = await fetch(`${WEB_BASE}/apis/common/v3/sports/soccer/fifa.world/athletes/${id}`, {
+    headers: { accept: 'application/json' },
+  })
+  if (!res.ok) throw new Error(`ESPN athlete ${res.status}`)
+  const raw = (await res.json()) as {
+    athlete?: Record<string, unknown>
+  } & Record<string, unknown>
+  const a = (raw.athlete || raw) as {
+    id?: string
+    displayName?: string
+    jersey?: string
+    age?: number
+    position?: { name?: string }
+    team?: { displayName?: string }
+    headshot?: { href?: string }
+    links?: { href?: string }[]
+  }
+  return {
+    id: String(a.id || id),
+    name: a.displayName || '',
+    position: a.position?.name || '',
+    age: a.age,
+    jersey: a.jersey,
+    club: a.team?.displayName,
+    headshot: a.headshot?.href,
+    link: a.links?.[0]?.href,
+  }
 }
 
 // Narrow window around "now" (UTC) — cheap to poll frequently for live updates.

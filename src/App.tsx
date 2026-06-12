@@ -9,11 +9,13 @@ import { GroupsView } from './components/GroupsView'
 import { BracketView } from './components/BracketView'
 import { FavoritesView } from './components/FavoritesView'
 import { InstallHint } from './components/InstallHint'
+import { PlayerModalProvider } from './components/PlayerModal'
 import type { MatchCardCommon } from './components/MatchCard'
 import { useTimezone } from './hooks/useTimezone'
 import { useFavorites } from './hooks/useFavorites'
 import { useFollowedPlayers } from './hooks/useFollowedPlayers'
 import { useLiveScores } from './hooks/useLiveScores'
+import { useTopScorers } from './hooks/useTopScorers'
 import { useAlerts } from './hooks/useAlerts'
 import { isLive } from './lib/match'
 import { KEYS, load, save } from './lib/storage'
@@ -57,6 +59,7 @@ export default function App() {
   const { favorites, isFavorite, toggle, setMany, count } = useFavorites()
   const followed = useFollowedPlayers()
   const { live, status, updatedAt } = useLiveScores()
+  const { scorers, loading: scorersLoading, matchesCounted } = useTopScorers(live)
   const now = useNow()
   const { canInstall, install } = useInstallPrompt()
 
@@ -118,6 +121,7 @@ export default function App() {
   ]
 
   return (
+    <PlayerModalProvider scorers={scorers} isFollowed={followed.isFollowed} toggleFollow={followed.toggle}>
     <div className="app">
       <Header
         tzId={tzId}
@@ -152,7 +156,15 @@ export default function App() {
           <ScheduleView matches={MATCHES} live={live} zone={zone} now={now} card={card} openMatchId={openMatchId} />
         )}
         {tab === 'groups' && (
-          <GroupsView matches={MATCHES} live={live} isFav={isFavorite} toggleFav={toggle} />
+          <GroupsView
+            matches={MATCHES}
+            live={live}
+            isFav={isFavorite}
+            toggleFav={toggle}
+            scorers={scorers}
+            scorersLoading={scorersLoading}
+            matchesCounted={matchesCounted}
+          />
         )}
         {tab === 'bracket' && <BracketView matches={MATCHES} live={live} zone={zone} />}
         {tab === 'favorites' && (
@@ -175,5 +187,6 @@ export default function App() {
 
       <InstallHint />
     </div>
+    </PlayerModalProvider>
   )
 }

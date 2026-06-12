@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useMatchSummary } from '../hooks/useMatchSummary'
+import { usePlayerModal } from './PlayerModal'
 import type { FollowedPlayer, Lineup, MatchEvent, TeamStats } from '../lib/types'
 
 interface Props {
@@ -53,13 +54,20 @@ function LineupCol({
   isFollowed: (id: string) => boolean
   onToggleFollow: (p: FollowedPlayer) => void
 }) {
+  const { openPlayer } = usePlayerModal()
   const starters = lineup.players.filter((p) => p.starter)
   const subs = lineup.players.filter((p) => !p.starter)
   const render = (p: Lineup['players'][number]) => (
     <li key={p.id || p.name} className="lp">
       <span className="lp__num">{p.jersey}</span>
       <span className="lp__name">
-        {p.name}
+        {p.id ? (
+          <button className="linklike" onClick={() => openPlayer({ id: p.id, name: p.name, teamCode })}>
+            {p.name}
+          </button>
+        ) : (
+          p.name
+        )}
         {p.subbedOut && <span className="lp__so" title="Subbed off"> ↓</span>}
         {p.subbedIn && <span className="lp__si" title="Subbed on"> ↑</span>}
       </span>
