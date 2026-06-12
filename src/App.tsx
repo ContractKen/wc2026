@@ -7,6 +7,7 @@ import { LiveTicker } from './components/LiveTicker'
 import { ScheduleView } from './components/ScheduleView'
 import { GroupsView } from './components/GroupsView'
 import { BracketView } from './components/BracketView'
+import { StatsView } from './components/StatsView'
 import { FavoritesView } from './components/FavoritesView'
 import { InstallHint } from './components/InstallHint'
 import { PlayerModalProvider } from './components/PlayerModal'
@@ -117,6 +118,7 @@ export default function App() {
     { id: 'schedule', label: 'Schedule' },
     { id: 'groups', label: 'Groups' },
     { id: 'bracket', label: 'Bracket' },
+    { id: 'stats', label: 'Stats' },
     { id: 'favorites', label: 'My Teams', badge: count + followed.count || undefined },
   ]
 
@@ -156,17 +158,12 @@ export default function App() {
           <ScheduleView matches={MATCHES} live={live} zone={zone} now={now} card={card} openMatchId={openMatchId} />
         )}
         {tab === 'groups' && (
-          <GroupsView
-            matches={MATCHES}
-            live={live}
-            isFav={isFavorite}
-            toggleFav={toggle}
-            scorers={scorers}
-            scorersLoading={scorersLoading}
-            matchesCounted={matchesCounted}
-          />
+          <GroupsView matches={MATCHES} live={live} isFav={isFavorite} toggleFav={toggle} />
         )}
         {tab === 'bracket' && <BracketView matches={MATCHES} live={live} zone={zone} />}
+        {tab === 'stats' && (
+          <StatsView scorers={scorers} scorersLoading={scorersLoading} matchesCounted={matchesCounted} />
+        )}
         {tab === 'favorites' && (
           <FavoritesView
             matches={MATCHES}

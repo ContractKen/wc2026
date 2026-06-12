@@ -1,8 +1,7 @@
 import { useMemo } from 'react'
-import type { Match, ScorerRow, Team } from '../lib/types'
+import type { Match, Team } from '../lib/types'
 import type { LiveMap } from '../lib/espn'
 import { computeBestThirds, computeQualification, computeStandings, type QualStatus } from '../lib/standings'
-import { TopScorers } from './TopScorers'
 import teamsData from '../data/teams.json'
 
 const TEAMS = teamsData as Team[]
@@ -19,12 +18,9 @@ interface Props {
   live: LiveMap
   isFav: (code: string) => boolean
   toggleFav: (code: string) => void
-  scorers: ScorerRow[]
-  scorersLoading: boolean
-  matchesCounted: number
 }
 
-export function GroupsView({ matches, live, isFav, toggleFav, scorers, scorersLoading, matchesCounted }: Props) {
+export function GroupsView({ matches, live, isFav, toggleFav }: Props) {
   const tables = useMemo(() => computeStandings(matches, TEAMS, live), [matches, live])
   const thirds = useMemo(() => computeBestThirds(tables), [tables])
   const qual = useMemo(() => computeQualification(tables), [tables])
@@ -130,8 +126,6 @@ export function GroupsView({ matches, live, isFav, toggleFav, scorers, scorersLo
           </table>
         </section>
       )}
-
-      <TopScorers scorers={scorers} loading={scorersLoading} matchesCounted={matchesCounted} />
     </div>
   )
 }

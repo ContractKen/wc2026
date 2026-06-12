@@ -404,7 +404,11 @@ h1, h2, h3 { margin: 0; }
 .q-third { background: rgba(255,203,69,0.18); color: var(--gold); }
 .q-out { background: rgba(255,59,92,0.18); color: var(--live); }
 
+/* ---------- Stats view ---------- */
+.stats-view__hint { color: var(--muted); font-size: 13px; margin: 0 0 16px; padding: 10px 14px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; }
+
 /* ---------- Top scorers ---------- */
+.scorers:first-child { margin-top: 0; }
 .scorers { margin-top: 20px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
 .scorers__title { font-size: 15px; color: var(--gold); margin-bottom: 12px; }
 .scorers__loading { font-size: 11px; color: var(--muted); font-weight: 400; margin-left: 6px; }

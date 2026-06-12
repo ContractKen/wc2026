@@ -1,5 +1,5 @@
-export type Tab = 'schedule' | 'groups' | 'bracket' | 'favorites'
-const TABS: Tab[] = ['schedule', 'groups', 'bracket', 'favorites']
+export type Tab = 'schedule' | 'groups' | 'bracket' | 'stats' | 'favorites'
+const TABS: Tab[] = ['schedule', 'groups', 'bracket', 'stats', 'favorites']
 
 export function getInitialTab(): Tab {
   const h = (typeof location !== 'undefined' ? location.hash : '').replace(/^#/, '')
