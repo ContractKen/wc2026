@@ -468,6 +468,25 @@ h1, h2, h3 { margin: 0; }
 .squad__name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .squad__pos { font-size: 10px; color: var(--faint); }
 
+/* ---------- iOS install hint ---------- */
+.install-hint {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--card-2);
+  border: 1px solid var(--accent-2);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.install-hint__text { font-size: 13px; color: var(--text); flex: 1; }
+.install-hint__close { background: none; border: none; color: var(--muted); font-size: 16px; padding: 4px; }
+
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
 
 /* Respect reduced-motion preferences. */

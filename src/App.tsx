@@ -8,6 +8,7 @@ import { ScheduleView } from './components/ScheduleView'
 import { GroupsView } from './components/GroupsView'
 import { BracketView } from './components/BracketView'
 import { FavoritesView } from './components/FavoritesView'
+import { InstallHint } from './components/InstallHint'
 import type { MatchCardCommon } from './components/MatchCard'
 import { useTimezone } from './hooks/useTimezone'
 import { useFavorites } from './hooks/useFavorites'
@@ -171,6 +172,8 @@ export default function App() {
         <span>Data: ESPN public API · Schedule cached locally · Times shown in {zone}</span>
         <span>Built for the love of the game ⚽</span>
       </footer>
+
+      <InstallHint />
     </div>
   )
 }

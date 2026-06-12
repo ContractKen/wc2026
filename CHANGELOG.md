@@ -3,6 +3,15 @@
 All notable changes to the World Cup 2026 Tracker. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); dates are 2026.
 
+## [1.3.1] — 2026-06-12 — Installable-app polish
+
+### Added
+- Proper **PNG app icons** (192, 512, maskable, and a 180px Apple touch icon) so the home-screen icon is crisp on both Android and iOS (iOS ignores SVG icons).
+- **iOS install hint** — a one-time, dismissible banner explaining *Share → Add to Home Screen* (iOS can't show the automatic install prompt that Android/desktop Chrome gets).
+
+### Notes
+- The app is a full PWA: installable to the home screen, runs full-screen, works offline. No app store needed. (A native wrapper via Capacitor remains an option for store distribution / true background push.)
+
 ## [1.3.0] — 2026-06-12 — Official "Watch" links
 
 ### Added

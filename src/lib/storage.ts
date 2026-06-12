@@ -22,4 +22,5 @@ export const KEYS = {
   players: 'wc2026.players',
   alertScope: 'wc2026.alertScope',
   region: 'wc2026.region',
+  installHint: 'wc2026.installHintDismissed',
 } as const
